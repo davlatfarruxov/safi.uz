@@ -9,15 +9,13 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Star, Hotel, Search, Filter, ShoppingCart, ArrowLeft, Plus, LogIn, Package } from "lucide-react"
 import { categories, getProductsForStarRating, getProductPrice } from "@/lib/products"
-import { useAuth } from "@/contexts/auth-context"
 import { useCart } from "@/contexts/cart-context"
 
 export default function CatalogPage() {
   const searchParams = useSearchParams()
   const router = useRouter()
-  const { user } = useAuth()
   const { addToCart, getTotalItems, getCartItem } = useCart()
-  const starRating = Number.parseInt(searchParams.get("stars") || user?.hotel.starRating.toString() || "3")
+  const starRating = Number.parseInt(searchParams.get("stars") || "3")
 
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("all")
@@ -72,38 +70,22 @@ export default function CatalogPage() {
               </Button>
               <div className="flex items-center space-x-2">
                 <Hotel className="h-6 w-6 text-primary" />
-                <h1 className="text-xl font-serif font-bold text-foreground">Safi Hotel Collection</h1>
+                <h1 className="text-xl font-serif font-bold text-foreground">HotelSupply Pro</h1>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              {user && (
-                <div className="text-sm">
-                  <div className="font-medium">{user.hotel.name}</div>
-                  <div className="flex items-center space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`h-3 w-3 ${i < starRating ? "text-primary fill-primary" : "text-muted-foreground"}`}
-                      />
-                    ))}
-                    <span className="ml-1 text-xs text-muted-foreground">{getStarRatingTitle(starRating)}</span>
-                  </div>
+              <div className="text-sm">
+                <div className="font-medium">Guest Browsing</div>
+                <div className="flex items-center space-x-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`h-3 w-3 ${i < starRating ? "text-primary fill-primary" : "text-muted-foreground"}`}
+                    />
+                  ))}
+                  <span className="ml-1 text-xs text-muted-foreground">{getStarRatingTitle(starRating)}</span>
                 </div>
-              )}
-              {!user && (
-                <div className="text-sm">
-                  <div className="font-medium">Guest Browsing</div>
-                  <div className="flex items-center space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`h-3 w-3 ${i < starRating ? "text-primary fill-primary" : "text-muted-foreground"}`}
-                      />
-                    ))}
-                    <span className="ml-1 text-xs text-muted-foreground">{getStarRatingTitle(starRating)}</span>
-                  </div>
-                </div>
-              )}
+              </div>
               <Button variant="outline" size="sm" onClick={() => router.push(`/packages?stars=${starRating}`)}>
                 <Package className="h-4 w-4 mr-2" />
                 Packages
@@ -122,35 +104,31 @@ export default function CatalogPage() {
                   </Badge>
                 )}
               </Button>
-              {!user && (
-                <Button size="sm" onClick={() => router.push("/login")}>
-                  <LogIn className="h-4 w-4 mr-2" />
-                  Sign In
-                </Button>
-              )}
+              <Button size="sm" onClick={() => router.push("/login")}>
+                <LogIn className="h-4 w-4 mr-2" />
+                Sign In
+              </Button>
             </div>
           </div>
         </div>
       </header>
 
       <div className="container mx-auto px-4 py-8">
-        {/* {!user && (
-          <Card className="mb-6 bg-blue-50 border-blue-200">
-            <CardContent className="p-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-semibold text-blue-900 mb-1">Browsing as Guest</h3>
-                  <p className="text-sm text-blue-700">
-                    Sign in to access personalized pricing, order history, and exclusive hotel packages.
-                  </p>
-                </div>
-                <Button size="sm" onClick={() => router.push("/login")}>
-                  Sign In
-                </Button>
+        <Card className="mb-6 bg-blue-50 border-blue-200">
+          <CardContent className="p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="font-semibold text-blue-900 mb-1">Browsing as Guest</h3>
+                <p className="text-sm text-blue-700">
+                  Sign in to access personalized pricing, order history, and exclusive hotel packages.
+                </p>
               </div>
-            </CardContent>
-          </Card>
-        )} */}
+              <Button size="sm" onClick={() => router.push("/login")}>
+                Sign In
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Page Title */}
         <div className="mb-8">
@@ -161,7 +139,7 @@ export default function CatalogPage() {
         </div>
 
         {/* Package CTA */}
-        {/* <Card className="mb-8 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
+        <Card className="mb-8 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
@@ -176,7 +154,7 @@ export default function CatalogPage() {
               </Button>
             </div>
           </CardContent>
-        </Card> */}
+        </Card>
 
         {/* Search and Filters */}
         <div className="flex flex-col md:flex-row gap-4 mb-8">

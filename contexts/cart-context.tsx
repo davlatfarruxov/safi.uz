@@ -3,7 +3,6 @@
 import type React from "react"
 import { createContext, useContext, useState, useEffect } from "react"
 import { products, getProductPrice, type Product } from "@/lib/products"
-import { useAuth } from "@/contexts/auth-context"
 
 export interface CartItem {
   productId: string
@@ -27,12 +26,11 @@ const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
-  const { user } = useAuth()
 
   // Load cart from localStorage on mount
   useEffect(() => {
-    if (typeof window !== "undefined" && user) {
-      const savedCart = localStorage.getItem(`cart-${user.id}`)
+    if (typeof window !== "undefined") {
+      const savedCart = localStorage.getItem("guest-cart")
       if (savedCart) {
         try {
           const parsedCart = JSON.parse(savedCart)
@@ -42,21 +40,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         }
       }
     }
-  }, [user])
+  }, [])
 
   // Save cart to localStorage whenever items change
   useEffect(() => {
-    if (typeof window !== "undefined" && user) {
-      localStorage.setItem(`cart-${user.id}`, JSON.stringify(items))
+    if (typeof window !== "undefined") {
+      localStorage.setItem("guest-cart", JSON.stringify(items))
     }
-  }, [items, user])
-
-  // Clear cart when user logs out
-  useEffect(() => {
-    if (!user) {
-      setItems([])
-    }
-  }, [user])
+  }, [items])
 
   const addToCart = (productId: string, starRating: number) => {
     const product = products.find((p) => p.id === productId)

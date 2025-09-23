@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
-import { AuthProvider } from "@/contexts/auth-context"
+import { LanguageProvider } from "@/hooks/use-language"
 import { CartProvider } from "@/contexts/cart-context"
 
 const inter = Inter({
@@ -18,9 +18,11 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Safi Hotel Collection - Premium B2B Hotel Supplies",
+  title: "Safí Hotel Collection - Premium B2B Hotel Supplies & Hospitality Solutions",
   description:
-    "Professional hotel supplies tailored to your star rating. Quality linens, amenities, and equipment for the hospitality industry.",
+    "Industry-leading hotel supplies, furniture, textiles, and hospitality solutions. Trusted by 10,000+ hotels worldwide. Premium quality, expert consulting, express delivery.",
+  keywords:
+    "hotel supplies, B2B hospitality, premium hotel furniture, hotel textiles, hospitality equipment, hotel amenities, luxury hotel supplies",
   generator: "v0.app",
 }
 
@@ -30,11 +32,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} antialiased`}>
+    <html className={`${inter.variable} ${playfair.variable} antialiased`}>
       <body className="font-sans">
-        <AuthProvider>
+        <LanguageProvider>
           <CartProvider>{children}</CartProvider>
-        </AuthProvider>
+        </LanguageProvider>
       </body>
     </html>
   )

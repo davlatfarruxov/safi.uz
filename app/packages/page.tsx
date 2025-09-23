@@ -42,11 +42,11 @@ export default function PackagesPage() {
   const [isCustomizing, setIsCustomizing] = useState(false)
 
   // Redirect to login if not authenticated
-  // useEffect(() => {
-  //   if (!user) {
-  //     router.push(`/login?redirect=/packages?stars=${starRating}`)
-  //   }
-  // }, [user, router, starRating])
+  useEffect(() => {
+    if (!user) {
+      router.push(`/login?redirect=/packages?stars=${starRating}`)
+    }
+  }, [user, router, starRating])
 
   const availablePackages = getPackagesForStarRating(starRating)
   const availableProducts = getProductsForStarRating(starRating)

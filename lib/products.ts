@@ -75,7 +75,7 @@ export const products: Product[] = [
     name: "Bath Towels Set",
     description: "Soft and absorbent bath towels for guest bathrooms",
     category: "bathroom",
-    image: "/white-cotton-bed-sheets-hotel.png",
+    image: "/placeholder-3onir.png",
     pricing: {
       1: 15,
       2: 25,
@@ -92,7 +92,7 @@ export const products: Product[] = [
     name: "Luxury Toiletry Set",
     description: "Premium toiletries including shampoo, conditioner, and body wash",
     category: "bathroom",
-    image: "/white-cotton-bed-sheets-hotel.png",
+    image: "/placeholder-4zf7u.png",
     pricing: {
       3: 35,
       4: 55,
@@ -109,7 +109,7 @@ export const products: Product[] = [
     name: "Compact Minibar",
     description: "Energy-efficient minibar for guest rooms",
     category: "kitchen",
-    image: "/white-cotton-bed-sheets-hotel.png",
+    image: "/placeholder-c26jz.png",
     pricing: {
       2: 180,
       3: 250,
@@ -125,7 +125,7 @@ export const products: Product[] = [
     name: "In-Room Coffee Machine",
     description: "Premium coffee machine for guest room convenience",
     category: "kitchen",
-    image: "/white-cotton-bed-sheets-hotel.png",
+    image: "/placeholder-5ie45.png",
     pricing: {
       3: 120,
       4: 180,
@@ -142,7 +142,7 @@ export const products: Product[] = [
     name: "Hotel Carpet",
     description: "Durable and stain-resistant carpet for high-traffic areas",
     category: "general",
-    image: "/white-cotton-bed-sheets-hotel.png",
+    image: "/placeholder-osn0p.png",
     pricing: {
       1: 25,
       2: 35,
@@ -159,7 +159,7 @@ export const products: Product[] = [
     name: "Digital Room Safe",
     description: "Secure digital safe for guest valuables",
     category: "general",
-    image: "/white-cotton-bed-sheets-hotel.png",
+    image: "/hotel-safe-black.png",
     pricing: {
       2: 85,
       3: 120,

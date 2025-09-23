@@ -51,7 +51,7 @@ export default function CartPage() {
                 </Button>
                 <div className="flex items-center space-x-2">
                   <Hotel className="h-6 w-6 text-primary" />
-                  <h1 className="text-xl font-serif font-bold text-foreground">Safi Hotel Collection</h1>
+                  <h1 className="text-xl font-serif font-bold text-foreground">HotelSupply Pro</h1>
                 </div>
               </div>
               <div className="text-sm">
@@ -86,7 +86,7 @@ export default function CartPage() {
               </Button>
               <div className="flex items-center space-x-2">
                 <Hotel className="h-6 w-6 text-primary" />
-                <h1 className="text-xl font-serif font-bold text-foreground">Safi Hotel Collection</h1>
+                <h1 className="text-xl font-serif font-bold text-foreground">HotelSupply Pro</h1>
               </div>
             </div>
             <div className="text-sm">
