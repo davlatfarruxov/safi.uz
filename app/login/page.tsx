@@ -51,7 +51,7 @@ export default function LoginPage() {
           </Link>
           <div className="flex items-center justify-center space-x-2 mb-4">
             <Hotel className="h-8 w-8 text-primary" />
-            <h1 className="text-2xl font-serif font-bold text-foreground">HotelSupply Pro</h1>
+            <h1 className="text-2xl font-serif font-bold text-foreground">Safi hotel collection</h1>
           </div>
           <p className="text-muted-foreground">B2B Hotel Supplies Platform</p>
         </div>

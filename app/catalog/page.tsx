@@ -70,7 +70,7 @@ export default function CatalogPage() {
               </Button>
               <div className="flex items-center space-x-2">
                 <Hotel className="h-6 w-6 text-primary" />
-                <h1 className="text-xl font-serif font-bold text-foreground">HotelSupply Pro</h1>
+                <h1 className="text-xl font-serif font-bold text-foreground">Safi Hotel Collection</h1>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -86,7 +86,7 @@ export default function CatalogPage() {
                   <span className="ml-1 text-xs text-muted-foreground">{getStarRatingTitle(starRating)}</span>
                 </div>
               </div>
-              <Button variant="outline" size="sm" onClick={() => router.push(`/packages?stars=${starRating}`)}>
+              {/* <Button variant="outline" size="sm" onClick={() => router.push(`/packages?stars=${starRating}`)}>
                 <Package className="h-4 w-4 mr-2" />
                 Packages
               </Button>
@@ -107,14 +107,14 @@ export default function CatalogPage() {
               <Button size="sm" onClick={() => router.push("/login")}>
                 <LogIn className="h-4 w-4 mr-2" />
                 Sign In
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
       </header>
 
       <div className="container mx-auto px-4 py-8">
-        <Card className="mb-6 bg-blue-50 border-blue-200">
+        {/* <Card className="mb-6 bg-blue-50 border-blue-200">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
@@ -128,7 +128,7 @@ export default function CatalogPage() {
               </Button>
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
 
         {/* Page Title */}
         <div className="mb-8">
@@ -139,7 +139,7 @@ export default function CatalogPage() {
         </div>
 
         {/* Package CTA */}
-        <Card className="mb-8 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
+        {/* <Card className="mb-8 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
@@ -154,7 +154,7 @@ export default function CatalogPage() {
               </Button>
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
 
         {/* Search and Filters */}
         <div className="flex flex-col md:flex-row gap-4 mb-8">
