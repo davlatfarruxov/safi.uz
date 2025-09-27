@@ -16,11 +16,6 @@ export default function CartPage() {
   const { user } = useAuth()
   const { items, updateQuantity, removeFromCart, getTotalPrice, clearCart } = useCart()
 
-  if (!user) {
-    router.push("/login")
-    return null
-  }
-
   const subtotal = getTotalPrice()
   const tax = subtotal * 0.08 // 8% tax
   const shipping = subtotal > 500 ? 0 : 50 // Free shipping over $500
@@ -34,6 +29,10 @@ export default function CartPage() {
   }
 
   const handleCheckout = () => {
+    if (!user) {
+      router.push("/login")
+      return
+    }
     router.push("/checkout")
   }
 
@@ -55,7 +54,16 @@ export default function CartPage() {
                 </div>
               </div>
               <div className="text-sm">
-                <div className="font-medium">{user.hotel.name}</div>
+                {user ? (
+                  <div className="font-medium">{user.hotel.name}</div>
+                ) : (
+                  <div className="flex items-center space-x-2">
+                    <span className="text-muted-foreground">Guest</span>
+                    <Button variant="outline" size="sm" onClick={() => router.push("/login")}>
+                      Login
+                    </Button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -213,7 +221,7 @@ export default function CartPage() {
 
                 <Button className="w-full" size="lg" onClick={handleCheckout}>
                   <CreditCard className="h-4 w-4 mr-2" />
-                  Proceed to Checkout
+                  {user ? "Proceed to Checkout" : "Login to Checkout"}
                 </Button>
 
                 <div className="text-xs text-muted-foreground text-center">
