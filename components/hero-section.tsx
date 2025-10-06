@@ -32,14 +32,14 @@ export function HeroSection() {
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
               <Link href="/products">{t.hero.viewCatalog}</Link>
             </Button>
-            <Button
+            {/* <Button
               size="lg"
               variant="outline"
               className="border-white bg-accent text-accent-foreground hover:bg-accent/90"
               asChild
             >
-              <Link href="#contact">{t.hero.getOffer}</Link>
-            </Button>
+              <Link href="#contact">{t.hero.viewCatalog}</Link>
+            </Button> */}
           </div>
         </div>
       </div>

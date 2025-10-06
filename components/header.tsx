@@ -54,7 +54,7 @@ export function Header() {
           </a>
           <LanguageSwitcher />
           <CartSheet />
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90">{t.nav.getQuote}</Button>
+          {/* <Button className="bg-accent text-accent-foreground hover:bg-accent/90">{t.nav.getQuote}</Button> */}
         </div>
       </div>
     </header>
