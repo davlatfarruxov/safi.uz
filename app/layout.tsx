@@ -12,6 +12,8 @@ const playfair = Playfair_Display({
   display: "swap",
 })
 
+
+
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
   variable: "--font-inter",
@@ -20,6 +22,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Safi Hotel Collection - Mehmonxonalar uchun to'liq ta'minot",
+  icons: {
+    icon: "safi-logo.png", // yoki .svg ham bo‘ladi
+  },
   description: "Xalqaro darajadagi mehmonxona jihozlari va ta'minot",
     generator: 'v0.app'
 }
