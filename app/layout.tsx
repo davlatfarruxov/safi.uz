@@ -1,30 +1,27 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Playfair_Display } from "next/font/google"
+import { Playfair_Display, Inter } from "next/font/google"
 import "./globals.css"
-import { LanguageProvider } from "@/hooks/use-language"
+import { StarRatingProvider } from "@/contexts/star-rating-context"
 import { CartProvider } from "@/contexts/cart-context"
-import { AuthProvider } from "@/contexts/auth-context"
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-})
+import { LanguageProvider } from "@/contexts/language-context"
 
 const playfair = Playfair_Display({
-  subsets: ["latin"],
-  display: "swap",
+  subsets: ["latin", "cyrillic"],
   variable: "--font-playfair",
+  display: "swap",
+})
+
+const inter = Inter({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-inter",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
-  title: "Safí Hotel Collection - Premium B2B Hotel Supplies & Hospitality Solutions",
-  description:
-    "Industry-leading hotel supplies, furniture, textiles, and hospitality solutions. Trusted by 10,000+ hotels worldwide. Premium quality, expert consulting, express delivery.",
-  keywords:
-    "hotel supplies, B2B hospitality, premium hotel furniture, hotel textiles, hospitality equipment, hotel amenities, luxury hotel supplies",
-  generator: "v0.app",
+  title: "Safi Hotel Collection - Mehmonxonalar uchun to'liq ta'minot",
+  description: "Xalqaro darajadagi mehmonxona jihozlari va ta'minot",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -33,13 +30,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html className={`${inter.variable} ${playfair.variable} antialiased`}>
-      <body className="font-sans">
-        <AuthProvider>
-          <LanguageProvider>
+    <html lang="uz" className={`${playfair.variable} ${inter.variable}`}>
+      <body className="antialiased">
+        <LanguageProvider>
+          <StarRatingProvider>
             <CartProvider>{children}</CartProvider>
-          </LanguageProvider>
-        </AuthProvider>
+          </StarRatingProvider>
+        </LanguageProvider>
       </body>
     </html>
   )
