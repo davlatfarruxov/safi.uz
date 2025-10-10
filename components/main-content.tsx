@@ -16,7 +16,7 @@ export function MainContent() {
           {/* Left side - Bedding image */}
           <div className="relative h-[400px] md:h-[425px] rounded-lg overflow-hidden">
             <Image
-              src="/safi-banner1.jpg"
+              src="/safi-banner1.JPG"
               alt="Luxury hotel bedding"
               fill
               className="object-cover brightness-50"
@@ -44,7 +44,7 @@ export function MainContent() {
               {/* Luxury Accessories section */}
               <div className="relative h-[180px] md:h-[200px] rounded-lg overflow-hidden">
                 <Image
-                  src="/safi-banner2.jpg"
+                  src="/safi-banner2.JPG"
                   alt="Luxury Accessories"
                   fill
                   className="object-cover brightness-50"
