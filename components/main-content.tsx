@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
-import mainSection1 from "/safi-banner1.jpg"
+import mainSection1 from "safi-banner1.jpg"
 import mainSection2 from "safi-banner2.jpg"
 import mainSection3 from "safi-banner3.jpg"
 import Image from "next/image"
