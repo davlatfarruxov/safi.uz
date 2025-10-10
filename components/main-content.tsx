@@ -2,9 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
-import mainSection1 from "/safi-banner1.jpg"
-import mainSection2 from "/safi-banner2.jpg"
-import mainSection3 from "/safi-banner3.jpg"
+
 import Image from "next/image"
 
 
@@ -18,9 +16,11 @@ export function MainContent() {
           {/* Left side - Bedding image */}
           <div className="relative h-[400px] md:h-[425px] rounded-lg overflow-hidden">
             <Image
-              src={mainSection1}
+              src="/safi-banner1.jpg"
               alt="Luxury hotel bedding"
-              className="w-full h-full object-cover brightness-50"
+              fill
+              className="object-cover brightness-50"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
             <div className="absolute inset-0  bg-opacity-30 flex items-center justify-start p-6 md:p-8 lg:p-12">
               <div className="max-w-xs md:max-w-md text-left">
@@ -44,9 +44,11 @@ export function MainContent() {
               {/* Luxury Accessories section */}
               <div className="relative h-[180px] md:h-[200px] rounded-lg overflow-hidden">
                 <Image
-                  src={mainSection2}
+                  src="/safi-banner2.jpg"
                   alt="Luxury Accessories"
-                  className="w-full h-full object-cover brightness-50"
+                  fill
+                  className="object-cover brightness-50"
+                  sizes="(max-width: 768px) 100vw, 25vw"
                 />
                 <div className="absolute inset-0  bg-opacity-30 flex flex-col items-center justify-center p-4">
                   <h2 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 text-center">
@@ -81,7 +83,13 @@ export function MainContent() {
             </div>
             {/* Mini Fridges section */}
             <div className="relative h-[180px] md:h-[200px] rounded-lg overflow-hidden">
-              <Image src={mainSection3} alt="Mini Fridges" className="w-full h-full object-cover brightness-50" />
+              <Image
+                src="/safi-banner3.jpg"
+                alt="Mini Fridges"
+                fill
+                className="object-cover brightness-50"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
               <div className="absolute inset-0  bg-opacity-30 flex flex-col items-center justify-center p-4 md:p-6">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4 text-center">
                   {t("miniFridges")}
