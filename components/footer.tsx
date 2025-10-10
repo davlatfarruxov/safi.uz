@@ -1,109 +1,90 @@
 "use client"
 
-import Link from "next/link"
-import Image from "next/image"
-import { Mail, Phone, MapPin } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import { useLanguage } from "@/lib/language-context"
 
 export function Footer() {
   const { t } = useLanguage()
 
+  const footerLinks = {
+    [t("shop")]: [
+      t("bedroom"),
+      t("bathroom"), 
+      t("toiletries"),
+      t("guest.amenities"),
+      t("room.accessories")
+    ],
+    [t("company")]: [
+      t("about.us"),
+      t("bespoke.solutions"),
+      t("eco.friendly.products"),
+      t("contact"),
+      t("blog")
+    ],
+    [t("support")]: [
+      t("faqs"),
+      t("shipping.delivery"),
+      t("returns.policy"),
+      t("terms.conditions"),
+      t("privacy.policy")
+    ],
+  }
+
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="container mx-auto px-4 py-12 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/safi-logo-ALzEZlSMWKFbRVKjJT8fDSuUQ2HgXh.png"
-              alt="Safi Hotel Collection"
-              width={160}
-              height={53}
-              className="h-10 w-auto"
-            />
-            <p className="text-sm text-muted-foreground">{t.footer.description}</p>
+    <footer className="bg-card border-t border-border">
+      <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
+          {/* Brand */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h3 className="text-lg md:text-xl font-bold text-[#084b25] mb-3 md:mb-4">Safi Hotel Collection</h3>
+            <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+              {t("footer.description")}
+            </p>
+            <div className="flex items-center gap-3 md:gap-4">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Facebook className="h-4 w-4 md:h-5 md:w-5" />
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Instagram className="h-4 w-4 md:h-5 md:w-5" />
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Twitter className="h-4 w-4 md:h-5 md:w-5" />
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Linkedin className="h-4 w-4 md:h-5 md:w-5" />
+              </a>
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="mb-4 font-semibold text-foreground">{t.footer.quickLinks}</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/products" className="text-sm text-muted-foreground transition-colors hover:text-accent">
-                  {t.nav.products}
-                </Link>
-              </li>
-              <li>
-                <Link href="#services" className="text-sm text-muted-foreground transition-colors hover:text-accent">
-                  {t.nav.services}
-                </Link>
-              </li>
-              <li>
-                <Link href="#about" className="text-sm text-muted-foreground transition-colors hover:text-accent">
-                  {t.nav.about}
-                </Link>
-              </li>
-              <li>
-                <Link href="#contact" className="text-sm text-muted-foreground transition-colors hover:text-accent">
-                  {t.nav.contact}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Categories */}
-          <div>
-            <h3 className="mb-4 font-semibold text-foreground">{t.productPreview.title}</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/products" className="text-sm text-muted-foreground transition-colors hover:text-accent">
-                  {t.productPreview.bedroom.title}
-                </Link>
-              </li>
-              <li>
-                <Link href="/products" className="text-sm text-muted-foreground transition-colors hover:text-accent">
-                  {t.productPreview.kitchen.title}
-                </Link>
-              </li>
-              <li>
-                <Link href="/products" className="text-sm text-muted-foreground transition-colors hover:text-accent">
-                  {t.productPreview.hygiene.title}
-                </Link>
-              </li>
-              <li>
-                <Link href="/products" className="text-sm text-muted-foreground transition-colors hover:text-accent">
-                  {t.productPreview.electronics.title}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="mb-4 font-semibold text-foreground">{t.footer.contact}</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2">
-                <Phone className="mt-0.5 h-4 w-4 text-accent" />
-                <span className="text-sm text-muted-foreground">+998 90 123 45 67</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Mail className="mt-0.5 h-4 w-4 text-accent" />
-                <span className="text-sm text-muted-foreground">info@safihotel.uz</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 text-accent" />
-                <span className="text-sm text-muted-foreground">{t.footer.address}</span>
-              </li>
-            </ul>
-          </div>
+          {/* Links */}
+          {Object.entries(footerLinks).map(([title, links]) => (
+            <div key={title}>
+              <h4 className="text-sm font-semibold text-foreground mb-3 md:mb-4">{title}</h4>
+              <ul className="space-y-1.5 md:space-y-2">
+                {links.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors block py-0.5">
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-12 border-t border-border pt-8 text-center">
-          <p className="text-sm text-muted-foreground">© 2025 Safi Hotel Collection. {t.footer.rights}</p>
+        {/* Bottom */}
+        <div className="pt-6 md:pt-8 border-t border-border">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4">
+            <p className="text-xs md:text-sm text-muted-foreground text-center md:text-left">
+              © {new Date().getFullYear()} Safi Hotel Collection. {t("all.rights.reserved")}
+            </p>
+            <p className="text-xs md:text-sm text-muted-foreground text-center md:text-right">
+              {t("free.delivery")}
+            </p>
+          </div>
         </div>
       </div>
     </footer>
   )
 }
-
-export default Footer

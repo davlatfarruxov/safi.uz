@@ -1,32 +1,25 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display, Inter } from "next/font/google"
+import { GeistSans } from "geist/font/sans"
+import { GeistMono } from "geist/font/mono"
+import { Analytics } from "@vercel/analytics/next"
+import { Suspense } from "react"
 import "./globals.css"
-import { StarRatingProvider } from "@/contexts/star-rating-context"
-import { CartProvider } from "@/contexts/cart-context"
-import { LanguageProvider } from "@/contexts/language-context"
-
-const playfair = Playfair_Display({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-playfair",
-  display: "swap",
-})
+import { LanguageProvider } from "@/lib/language-context"
+import { WishlistProvider } from "@/lib/wishlist-context"
 
 
-
-const inter = Inter({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-inter",
-  display: "swap",
-})
 
 export const metadata: Metadata = {
-  title: "Safi Hotel Collection - Mehmonxonalar uchun to'liq ta'minot",
+  title: "Safi Hotel Collection | Premium B2B Hotel Supplies & Hospitality Solutions",
+  description:
+    "Industry-leading hotel supplies, furniture, textiles, and hospitality solutions. Trusted by 10,000+ hotels worldwide. Premium quality, expert consulting, express delivery.",
+  keywords:
+    "hotel supplies, B2B hospitality, premium hotel furniture, hotel textiles, hospitalitsted by 10,000+ hotels worldwide. Premium quality, expert consulting, express delivery.",
+  generator: "v0.app",
   icons: {
     icon: "safi-logo.png", // yoki .svg ham bo‘ladi
   },
-  description: "Xalqaro darajadagi mehmonxona jihozlari va ta'minot",
-    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -35,13 +28,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="uz" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="antialiased">
+    <html lang="en">
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <LanguageProvider>
-          <StarRatingProvider>
-            <CartProvider>{children}</CartProvider>
-          </StarRatingProvider>
+          <WishlistProvider>
+            <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+          </WishlistProvider>
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   )
