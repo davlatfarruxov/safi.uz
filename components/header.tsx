@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Search, Heart, Bell, ShoppingCart, ChevronDown, Menu, X, Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
+import { Search, Heart, Bell, ShoppingCart, ChevronDown, Menu, X, Instagram, Youtube, MessageCircle, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
@@ -89,7 +89,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
             {/* Wishlist - hidden on small screens */}
             <Link href="/wishlist">
               <Button variant="ghost" size="icon" className="hidden sm:flex relative hover:bg-green-50 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
-                <Heart className="h-10 w-10" />
+                <Heart className="h-12 w-12" />
                 {wishlistCount > 0 && (
                   <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center text-[10px]">
                     {wishlistCount}
@@ -100,7 +100,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
 
             {/* Notifications */}
             <Button variant="ghost" size="icon" className="relative hidden sm:flex hover:bg-green-50 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
-              <Bell className="h-10 w-10" />
+              <Bell className="h-12 w-12" />
               <span className="absolute top-0 right-0 bg-[#084b25] text-white text-xs rounded-full h-4 w-4 flex items-center justify-center text-[8px]">
                 0
               </span>
@@ -108,7 +108,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
 
             {/* Cart */}
             <Button variant="ghost" size="icon" className="hover:bg-green-50 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
-              <ShoppingCart className="h-10 w-10" />
+              <ShoppingCart className="h-12 w-12" />
             </Button>
           </div>
         </div>
@@ -137,17 +137,14 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
           <LanguageSwitcher />
           {/* Social Media Icons */}
           <div className="flex items-center gap-4 ml-6">
-            <a href="#" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
-              <Facebook className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
+            <a href="https://instagram.com/safihotelcollection" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="#" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
-              <Twitter className="h-5 w-5" />
+            <a href="https://t.me/safihotelcollection" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
+              <Send className="h-5 w-5" />
             </a>
-            <a href="#" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
-              <Linkedin className="h-5 w-5" />
+            <a href="https://youtube.com/@safihotelcollection" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
+              <Youtube className="h-5 w-5" />
             </a>
           </div>
         </div>

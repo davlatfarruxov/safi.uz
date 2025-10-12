@@ -9,7 +9,7 @@ export function GoogleMap() {
     <div>
       <h2 className="mb-3 font-serif text-3xl font-bold text-gray-900">{t("contact.locations.title")}</h2>
       <p className="mb-8 text-gray-600">{t("contact.locations.subtitle")}</p>
-      
+
       {/* Google Maps Embed - Uzbekistan with both locations */}
       <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg border border-gray-200">
         <iframe
@@ -92,8 +92,8 @@ export function GoogleMap() {
             </div>
             <div className="flex items-center gap-3">
               <span className="text-[#084b25] font-medium">✉️</span>
-              <a 
-                href="mailto:tashkent@safihotelcollection.com" 
+              <a
+                href="mailto:tashkent@safihotelcollection.com"
                 className="text-gray-900 hover:text-[#084b25] font-medium transition-colors break-all"
               >
                 tashkent@safihotelcollection.com
