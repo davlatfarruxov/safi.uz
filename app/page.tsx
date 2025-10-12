@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <TopBanner />
-      <Header showMainNavigation={true} />
+      <Header showMainNavigation={false} />
       <main>
 
         <MainContent />
@@ -27,7 +27,6 @@ export default function Home() {
         <GenevaDispensersSection />
         <PopularBrands />
         <WelcomeSection />
-        <ProductsWeLoveSection />
 
       </main>
       <Footer />
