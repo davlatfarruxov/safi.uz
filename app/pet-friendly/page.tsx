@@ -5,85 +5,85 @@ import { SidebarFilters } from "@/components/sidebar-filters"
 import { ProductCard } from "@/components/product-card"
 import { PageHeader } from "@/components/page-header"
 
-export default function ToiletriesPage() {
+export default function PetFriendlyPage() {
   const products = [
     {
       id: 1,
-      name: "Geneva Green Dispensers - Natural Shampoo",
-      nameUz: "Geneva Green dozatorlar - Tabiiy shampun",
-      nameRu: "Дозаторы Geneva Green - Натуральный шампунь",
-      price: 24.99,
-      originalPrice: 34.99,
+      name: "Pet Welcome Kit - Complete Set",
+      nameUz: "Uy hayvonlari xush kelibsiz to'plami - To'liq to'plam",
+      nameRu: "Приветственный набор для питомцев - Полный комплект",
+      price: 42.99,
+      originalPrice: 59.99,
       image: "/api/placeholder/300/300",
-      badge: "Eco-Friendly",
+      badge: "Pet-Safe",
       isNew: true,
       rating: 4.8,
-      reviews: 134
+      reviews: 124
     },
     {
       id: 2,
-      name: "Luxury Soap Dispensers Set",
-      nameUz: "Hashamatli sovun dozatorlari to'plami",
-      nameRu: "Набор роскошных дозаторов мыла",
-      price: 45.99,
-      originalPrice: 59.99,
+      name: "Dog Bed & Blanket Set",
+      nameUz: "It to'shagi va adyol to'plami",
+      nameRu: "Набор лежанки и одеяла для собак",
+      price: 67.99,
+      originalPrice: 89.99,
       image: "/api/placeholder/300/300",
-      badge: "Premium",
+      badge: "Comfort",
       isNew: false,
-      rating: 4.7,
-      reviews: 89
-    },
-    {
-      id: 3,
-      name: "Natural Body Wash Collection",
-      nameUz: "Tabiiy tana yuvish kolleksiyasi",
-      nameRu: "Коллекция натурального геля для душа",
-      price: 18.99,
-      originalPrice: 26.99,
-      image: "/api/placeholder/300/300",
-      badge: "Organic",
-      isNew: true,
       rating: 4.9,
       reviews: 156
     },
     {
-      id: 4,
-      name: "Hotel Shampoo & Conditioner Set",
-      nameUz: "Mehmonxona shampun va konditsioner to'plami",
-      nameRu: "Набор шампуня и кондиционера для отелей",
-      price: 32.99,
-      originalPrice: 44.99,
+      id: 3,
+      name: "Pet Food & Water Bowls",
+      nameUz: "Uy hayvonlari ovqat va suv idishlari",
+      nameRu: "Миски для корма и воды для питомцев",
+      price: 24.99,
+      originalPrice: 34.99,
       image: "/api/placeholder/300/300",
-      badge: "Bestseller",
+      badge: "Stainless Steel",
+      isNew: true,
+      rating: 4.7,
+      reviews: 98
+    },
+    {
+      id: 4,
+      name: "Pet Grooming Kit",
+      nameUz: "Uy hayvonlari parvarishi to'plami",
+      nameRu: "Набор для ухода за питомцами",
+      price: 35.99,
+      originalPrice: 49.99,
+      image: "/api/placeholder/300/300",
+      badge: "Professional",
       isNew: false,
       rating: 4.6,
-      reviews: 203
+      reviews: 87
     },
     {
       id: 5,
-      name: "Bamboo Toothbrush Holders",
-      nameUz: "Bambuk tish cho'tkasi ushlagichlar",
-      nameRu: "Держатели зубных щеток из бамбука",
-      price: 15.99,
-      originalPrice: 22.99,
+      name: "Pet Waste Disposal Kit",
+      nameUz: "Uy hayvonlari chiqindilari utilizatsiya to'plami",
+      nameRu: "Набор для утилизации отходов питомцев",
+      price: 18.99,
+      originalPrice: 26.99,
       image: "/api/placeholder/300/300",
-      badge: "Sustainable",
+      badge: "Eco-Friendly",
       isNew: true,
       rating: 4.5,
-      reviews: 78
+      reviews: 134
     },
     {
       id: 6,
-      name: "Premium Toilet Paper Dispensers",
-      nameUz: "Premium hojatxona qog'ozi dozatorlari",
-      nameRu: "Премиум дозаторы туалетной бумаги",
-      price: 67.99,
-      originalPrice: 89.99,
+      name: "Pet Toy Collection",
+      nameUz: "Uy hayvonlari o'yinchoqlari kolleksiyasi",
+      nameRu: "Коллекция игрушек для питомцев",
+      price: 29.99,
+      originalPrice: 39.99,
       image: "/api/placeholder/300/300",
-      badge: "Luxury",
+      badge: "Interactive",
       isNew: false,
       rating: 4.8,
-      reviews: 124
+      reviews: 167
     }
   ]
 
@@ -100,8 +100,8 @@ export default function ToiletriesPage() {
 
           <div className="flex-1">
             <PageHeader 
-              titleKey="toiletries.title"
-              descriptionKey="toiletries.description"
+              titleKey="pet.friendly.title"
+              descriptionKey="pet.friendly.description"
             />
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-6">

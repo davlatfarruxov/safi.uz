@@ -5,85 +5,85 @@ import { SidebarFilters } from "@/components/sidebar-filters"
 import { ProductCard } from "@/components/product-card"
 import { PageHeader } from "@/components/page-header"
 
-export default function ToiletriesPage() {
+export default function ChildrensAmenitiesPage() {
   const products = [
     {
       id: 1,
-      name: "Geneva Green Dispensers - Natural Shampoo",
-      nameUz: "Geneva Green dozatorlar - Tabiiy shampun",
-      nameRu: "Дозаторы Geneva Green - Натуральный шампунь",
-      price: 24.99,
-      originalPrice: 34.99,
+      name: "Kids Welcome Kit - Fun Collection",
+      nameUz: "Bolalar xush kelibsiz to'plami - Qiziqarli kolleksiya",
+      nameRu: "Детский приветственный набор - Веселая коллекция",
+      price: 34.99,
+      originalPrice: 49.99,
       image: "/api/placeholder/300/300",
-      badge: "Eco-Friendly",
+      badge: "Kid-Friendly",
       isNew: true,
       rating: 4.8,
-      reviews: 134
-    },
-    {
-      id: 2,
-      name: "Luxury Soap Dispensers Set",
-      nameUz: "Hashamatli sovun dozatorlari to'plami",
-      nameRu: "Набор роскошных дозаторов мыла",
-      price: 45.99,
-      originalPrice: 59.99,
-      image: "/api/placeholder/300/300",
-      badge: "Premium",
-      isNew: false,
-      rating: 4.7,
-      reviews: 89
-    },
-    {
-      id: 3,
-      name: "Natural Body Wash Collection",
-      nameUz: "Tabiiy tana yuvish kolleksiyasi",
-      nameRu: "Коллекция натурального геля для душа",
-      price: 18.99,
-      originalPrice: 26.99,
-      image: "/api/placeholder/300/300",
-      badge: "Organic",
-      isNew: true,
-      rating: 4.9,
       reviews: 156
     },
     {
-      id: 4,
-      name: "Hotel Shampoo & Conditioner Set",
-      nameUz: "Mehmonxona shampun va konditsioner to'plami",
-      nameRu: "Набор шампуня и кондиционера для отелей",
-      price: 32.99,
-      originalPrice: 44.99,
+      id: 2,
+      name: "Children's Bathrobe Set",
+      nameUz: "Bolalar xalatlari to'plami",
+      nameRu: "Набор детских халатов",
+      price: 45.99,
+      originalPrice: 64.99,
       image: "/api/placeholder/300/300",
-      badge: "Bestseller",
+      badge: "Soft & Cozy",
+      isNew: false,
+      rating: 4.9,
+      reviews: 134
+    },
+    {
+      id: 3,
+      name: "Mini Toiletries for Kids",
+      nameUz: "Bolalar uchun mini gigiyena vositalari",
+      nameRu: "Мини туалетные принадлежности для детей",
+      price: 18.99,
+      originalPrice: 26.99,
+      image: "/api/placeholder/300/300",
+      badge: "Gentle Formula",
+      isNew: true,
+      rating: 4.7,
+      reviews: 98
+    },
+    {
+      id: 4,
+      name: "Colorful Kids Slippers",
+      nameUz: "Rangli bolalar shippaklar",
+      nameRu: "Красочные детские тапочки",
+      price: 12.99,
+      originalPrice: 18.99,
+      image: "/api/placeholder/300/300",
+      badge: "Colorful",
       isNew: false,
       rating: 4.6,
-      reviews: 203
+      reviews: 187
     },
     {
       id: 5,
-      name: "Bamboo Toothbrush Holders",
-      nameUz: "Bambuk tish cho'tkasi ushlagichlar",
-      nameRu: "Держатели зубных щеток из бамбука",
-      price: 15.99,
-      originalPrice: 22.99,
-      image: "/api/placeholder/300/300",
-      badge: "Sustainable",
-      isNew: true,
-      rating: 4.5,
-      reviews: 78
-    },
-    {
-      id: 6,
-      name: "Premium Toilet Paper Dispensers",
-      nameUz: "Premium hojatxona qog'ozi dozatorlari",
-      nameRu: "Премиум дозаторы туалетной бумаги",
+      name: "Baby Care Essentials Kit",
+      nameUz: "Chaqaloq parvarishi zaruriyatlari to'plami",
+      nameRu: "Набор основных средств по уходу за ребенком",
       price: 67.99,
       originalPrice: 89.99,
       image: "/api/placeholder/300/300",
-      badge: "Luxury",
+      badge: "Baby Safe",
+      isNew: true,
+      rating: 4.9,
+      reviews: 143
+    },
+    {
+      id: 6,
+      name: "Children's Activity Pack",
+      nameUz: "Bolalar faoliyat paketi",
+      nameRu: "Пакет детских развлечений",
+      price: 24.99,
+      originalPrice: 34.99,
+      image: "/api/placeholder/300/300",
+      badge: "Educational",
       isNew: false,
       rating: 4.8,
-      reviews: 124
+      reviews: 176
     }
   ]
 
@@ -100,8 +100,8 @@ export default function ToiletriesPage() {
 
           <div className="flex-1">
             <PageHeader 
-              titleKey="toiletries.title"
-              descriptionKey="toiletries.description"
+              titleKey="childrens.amenities.title"
+              descriptionKey="childrens.amenities.description"
             />
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-6">

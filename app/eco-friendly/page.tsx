@@ -5,85 +5,85 @@ import { SidebarFilters } from "@/components/sidebar-filters"
 import { ProductCard } from "@/components/product-card"
 import { PageHeader } from "@/components/page-header"
 
-export default function ToiletriesPage() {
+export default function EcoFriendlyPage() {
   const products = [
     {
       id: 1,
-      name: "Geneva Green Dispensers - Natural Shampoo",
-      nameUz: "Geneva Green dozatorlar - Tabiiy shampun",
-      nameRu: "Дозаторы Geneva Green - Натуральный шампунь",
-      price: 24.99,
-      originalPrice: 34.99,
+      name: "Bamboo Towel Collection",
+      nameUz: "Bambuk sochiqlar kolleksiyasi",
+      nameRu: "Коллекция бамбуковых полотенец",
+      price: 89.99,
+      originalPrice: 119.99,
       image: "/api/placeholder/300/300",
-      badge: "Eco-Friendly",
+      badge: "100% Bamboo",
       isNew: true,
-      rating: 4.8,
-      reviews: 134
+      rating: 4.9,
+      reviews: 187
     },
     {
       id: 2,
-      name: "Luxury Soap Dispensers Set",
-      nameUz: "Hashamatli sovun dozatorlari to'plami",
-      nameRu: "Набор роскошных дозаторов мыла",
-      price: 45.99,
-      originalPrice: 59.99,
+      name: "Organic Cotton Bed Sheets",
+      nameUz: "Organik paxta choyshablar",
+      nameRu: "Простыни из органического хлопка",
+      price: 156.99,
+      originalPrice: 199.99,
       image: "/api/placeholder/300/300",
-      badge: "Premium",
+      badge: "Organic",
       isNew: false,
-      rating: 4.7,
-      reviews: 89
+      rating: 4.8,
+      reviews: 143
     },
     {
       id: 3,
-      name: "Natural Body Wash Collection",
-      nameUz: "Tabiiy tana yuvish kolleksiyasi",
-      nameRu: "Коллекция натурального геля для душа",
-      price: 18.99,
-      originalPrice: 26.99,
-      image: "/api/placeholder/300/300",
-      badge: "Organic",
-      isNew: true,
-      rating: 4.9,
-      reviews: 156
-    },
-    {
-      id: 4,
-      name: "Hotel Shampoo & Conditioner Set",
-      nameUz: "Mehmonxona shampun va konditsioner to'plami",
-      nameRu: "Набор шампуня и кондиционера для отелей",
-      price: 32.99,
-      originalPrice: 44.99,
-      image: "/api/placeholder/300/300",
-      badge: "Bestseller",
-      isNew: false,
-      rating: 4.6,
-      reviews: 203
-    },
-    {
-      id: 5,
-      name: "Bamboo Toothbrush Holders",
-      nameUz: "Bambuk tish cho'tkasi ushlagichlar",
-      nameRu: "Держатели зубных щеток из бамбука",
-      price: 15.99,
-      originalPrice: 22.99,
-      image: "/api/placeholder/300/300",
-      badge: "Sustainable",
-      isNew: true,
-      rating: 4.5,
-      reviews: 78
-    },
-    {
-      id: 6,
-      name: "Premium Toilet Paper Dispensers",
-      nameUz: "Premium hojatxona qog'ozi dozatorlari",
-      nameRu: "Премиум дозаторы туалетной бумаги",
+      name: "Recycled Amenities Kit",
+      nameUz: "Qayta ishlangan jihozlar to'plami",
+      nameRu: "Набор из переработанных материалов",
       price: 67.99,
       originalPrice: 89.99,
       image: "/api/placeholder/300/300",
-      badge: "Luxury",
+      badge: "Recycled",
+      isNew: true,
+      rating: 4.7,
+      reviews: 134
+    },
+    {
+      id: 4,
+      name: "Biodegradable Toiletries Set",
+      nameUz: "Biologik parchalanuvchi gigiyena vositalari to'plami",
+      nameRu: "Набор биоразлагаемых туалетных принадлежностей",
+      price: 45.99,
+      originalPrice: 64.99,
+      image: "/api/placeholder/300/300",
+      badge: "Biodegradable",
       isNew: false,
+      rating: 4.6,
+      reviews: 98
+    },
+    {
+      id: 5,
+      name: "Solar-Powered Amenities",
+      nameUz: "Quyosh energiyasi bilan ishlaydigan jihozlar",
+      nameRu: "Принадлежности на солнечной энергии",
+      price: 124.99,
+      originalPrice: 159.99,
+      image: "/api/placeholder/300/300",
+      badge: "Solar Powered",
+      isNew: true,
       rating: 4.8,
-      reviews: 124
+      reviews: 176
+    },
+    {
+      id: 6,
+      name: "Sustainable Packaging Collection",
+      nameUz: "Barqaror qadoqlash kolleksiyasi",
+      nameRu: "Коллекция устойчивой упаковки",
+      price: 34.99,
+      originalPrice: 49.99,
+      image: "/api/placeholder/300/300",
+      badge: "Zero Waste",
+      isNew: false,
+      rating: 4.9,
+      reviews: 167
     }
   ]
 
@@ -100,8 +100,8 @@ export default function ToiletriesPage() {
 
           <div className="flex-1">
             <PageHeader 
-              titleKey="toiletries.title"
-              descriptionKey="toiletries.description"
+              titleKey="eco.friendly.products.title"
+              descriptionKey="eco.friendly.products.description"
             />
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-6">

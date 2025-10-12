@@ -3,6 +3,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { SidebarFilters } from "@/components/sidebar-filters"
 import { ProductCard } from "@/components/product-card"
+import { PageHeader } from "@/components/page-header"
 
 export default function BathroomPage() {
   const products = [
@@ -52,6 +53,11 @@ export default function BathroomPage() {
           </div>
 
           <div className="flex-1">
+            <PageHeader 
+              titleKey="bathroom.title"
+              descriptionKey="bathroom.description"
+            />
+            
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-6">
               {products.map((product) => (
                 <ProductCard

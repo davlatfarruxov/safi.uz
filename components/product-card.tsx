@@ -3,24 +3,49 @@
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
-import { ShoppingBag, Heart } from "lucide-react"
+import { ShoppingBag, Heart, Star } from "lucide-react"
 import Image from "next/image"
 import { useWishlist } from "@/lib/wishlist-context"
+import { useLanguage } from "@/lib/language-context"
 
 interface ProductCardProps {
-  id?: string
+  id?: string | number
   name: string
+  nameUz?: string
+  nameRu?: string
   price: number
   originalPrice?: number
   image: string
   badge?: string
+  isNew?: boolean
+  rating?: number
+  reviews?: number
 }
 
-export function ProductCard({ id, name, price, originalPrice, image, badge }: ProductCardProps) {
+export function ProductCard({ 
+  id, 
+  name, 
+  nameUz, 
+  nameRu, 
+  price, 
+  originalPrice, 
+  image, 
+  badge, 
+  isNew, 
+  rating, 
+  reviews 
+}: ProductCardProps) {
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist()
+  const { language } = useLanguage()
 
-  const productId = id || name.toLowerCase().replace(/\s+/g, "-")
+  const productId = String(id) || name.toLowerCase().replace(/\s+/g, "-")
   const isLiked = isInWishlist(productId)
+
+  const getLocalizedName = () => {
+    if (language === "uz" && nameUz) return nameUz
+    if (language === "ru" && nameRu) return nameRu
+    return name
+  }
 
   const handleWishlistToggle = () => {
     if (isLiked) {
@@ -40,9 +65,9 @@ export function ProductCard({ id, name, price, originalPrice, image, badge }: Pr
   return (
     <div className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
       <div className="relative aspect-square bg-gray-50 overflow-hidden">
-        {badge && (
-          <span className="absolute top-2 md:top-3 left-2 md:left-3 bg-white px-2 md:px-3 py-1 text-xs font-medium text-gray-900 rounded shadow-sm z-10">
-            {badge}
+        {(badge || isNew) && (
+          <span className="absolute top-2 md:top-3 left-2 md:left-3 bg-red-500 text-white px-2 md:px-3 py-1 text-xs font-medium rounded shadow-sm z-10">
+            {badge || (isNew ? "NEW" : "")}
           </span>
         )}
         <Image
@@ -62,8 +87,27 @@ export function ProductCard({ id, name, price, originalPrice, image, badge }: Pr
 
       <div className="p-3 md:p-4">
         <h3 className="text-xs md:text-sm font-normal text-gray-900 mb-2 md:mb-3 line-clamp-2 min-h-[2rem] md:min-h-[2.5rem] leading-tight">
-          {name}
+          {getLocalizedName()}
         </h3>
+
+        {/* Rating */}
+        {rating && reviews && (
+          <div className="flex items-center gap-1 mb-2">
+            <div className="flex items-center">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className={`w-3 h-3 ${
+                    i < Math.floor(rating)
+                      ? "text-yellow-400 fill-yellow-400"
+                      : "text-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+            <span className="text-xs text-gray-500">({reviews})</span>
+          </div>
+        )}
 
         <div className="mb-3 md:mb-4">
           <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
