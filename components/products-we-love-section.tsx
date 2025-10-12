@@ -19,7 +19,7 @@ export function ProductsWeLoveSection() {
     },
     {
       id: "corby-hairdryer",
-      name: "Corby Milton 2000W Hairdryer, Black",
+      name: "Corby Milton 2000W Hairdryerr, Black",
       price: 24.50,
       originalPrice: 29.40,
       image: "/corby-hairdryer-black.jpg",

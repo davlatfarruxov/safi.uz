@@ -62,6 +62,11 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Navigation
     new: "Новинки",
+    main: "Главная",
+    about: "О нас",
+    factory: "Фабрика",
+    products: "Продукты",
+    "for.partners": "Для партнеров",
     bathroom: "Ванная",
     bedroom: "Спальня",
     toiletries: "Туалетные принадлежности",
@@ -116,6 +121,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Product Showcases
     "discover.bathrobes": "Откройте для себя наши халаты",
+    "bestsellers": "Бестселлеры",
+    "popular.brands": "Популярные бренды",
     "geneva.green.dispensers": "Дозаторы Geneva Green",
     "products.we.love": "Продукты, которые мы любим",
 
@@ -199,6 +206,13 @@ const translations: Record<Language, Record<string, string>> = {
     "based.on": "на основе",
     reviews: "отзывов",
 
+    // Welcome Section
+    "welcome.title": "Добро пожаловать в Safi Hotel Collection",
+    "welcome.description.1": "Safi Hotel Collection - это семейный бизнес с страстью к предоставлению высококачественных принадлежностей для гостиничных номеров. Имея более 25 лет специализированного опыта, мы гордимся тем, что являемся одним из ведущих поставщиков гостиничных принадлежностей в Узбекистане.",
+    "welcome.description.2": "Независимо от того, являетесь ли вы престижным отелем в центре Ташкента, интимным бутик-отелем или независимым гостевым домом, мы здесь, чтобы поддержать вас на каждом этапе пути.",
+    "welcome.signature": "Команда Safi",
+    "discover.our.story": "Узнать нашу историю",
+
     // Wishlist
     wishlist: "Избранное",
     "wishlist.empty": "Ваш список желаний пуст",
@@ -223,6 +237,11 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Navigation
     new: "Yangiliklar",
+    main: "Asosiy",
+    about: "Biz haqimizda",
+    factory: "Zavod",
+    products: "Mahsulotlar",
+    "for.partners": "Hamkorlar uchun",
     bathroom: "Hammom",
     bedroom: "Yotoq xonasi",
     toiletries: "Shaxsiy gigiyena",
@@ -275,6 +294,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Product Showcases
     "discover.bathrobes": "Bizning xalatlarimizni kashf eting",
+    "bestsellers": "Eng ko'p sotilganlar",
+    "popular.brands": "Mashhur brendlar",
     "geneva.green.dispensers": "Geneva Green dozatorlar",
     "products.we.love": "Biz yaxshi ko'radigan mahsulotlar",
 
@@ -390,6 +411,13 @@ const translations: Record<Language, Record<string, string>> = {
     "based.on": "asosida",
     reviews: "sharh",
 
+    // Welcome Section
+    "welcome.title": "Safi Hotel Collection ga xush kelibsiz",
+    "welcome.description.1": "Safi Hotel Collection - bu mehmonxona xonalari uchun yuqori sifatli jihozlar taqdim etishga ishtiyoqli oilaviy biznes. 25 yildan ortiq ixtisoslashgan tajribaga ega bo'lib, biz O'zbekistonning yetakchi mehmonxona jihozlari yetkazib beruvchilaridan biri ekanligimizdan faxrlanamiz.",
+    "welcome.description.2": "Siz Toshkent markazidagi nufuzli mehmonxona, samimiy butik mehmonxona yoki mustaqil mehmon uyi bo'lasizmi, biz yo'lning har bir bosqichida sizni qo'llab-quvvatlash uchun shu yerdamiz.",
+    "welcome.signature": "Safi jamoasi",
+    "discover.our.story": "Bizning hikoyamizni bilib oling",
+
     // Wishlist
     wishlist: "Sevimlilar",
     "wishlist.empty": "Sevimlilar ro'yxatingiz bo'sh",
@@ -414,6 +442,11 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Navigation
     new: "New",
+    main: "Main",
+    about: "About",
+    factory: "Factory",
+    products: "Products",
+    "for.partners": "For Partners",
     bathroom: "Bathroom",
     bedroom: "Bedroom",
     toiletries: "Toiletries",
@@ -466,6 +499,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Product Showcases
     "discover.bathrobes": "Discover our Bathrobes",
+    "bestsellers": "Bestsellers",
+    "popular.brands": "Popular Brands",
     "geneva.green.dispensers": "Geneva Green Dispensers",
     "products.we.love": "Products We Love",
 
@@ -548,6 +583,13 @@ const translations: Record<Language, Record<string, string>> = {
     "out.of": "out of",
     "based.on": "based on",
     reviews: "reviews",
+
+    // Welcome Section
+    "welcome.title": "Welcome to Safi Hotel Collection",
+    "welcome.description.1": "Safi Hotel Collection is a family-run business with a passion for providing top-quality hotel room supplies. With over 25 years of dedicated expertise, we take pride in being one of Uzbekistan's foremost hospitality suppliers.",
+    "welcome.description.2": "Whether you're a prestigious hotel in central Tashkent, an intimate boutique retreat or an independent guest house, we're here to support you every step of the way.",
+    "welcome.signature": "The Safi Team",
+    "discover.our.story": "Discover Our Story",
 
     // Wishlist
     wishlist: "My Wishlist",

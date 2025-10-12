@@ -4,6 +4,7 @@ import { ProductCard } from "@/components/product-card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
+import { useEffect, useRef, useState } from "react"
 
 interface ProductShowcaseProps {
   titleKey: string
@@ -12,49 +13,49 @@ interface ProductShowcaseProps {
 
 export function ProductShowcase({ titleKey, category }: ProductShowcaseProps) {
   const { t } = useLanguage()
-  const bathrobe_products = [
+  const [isVisible, setIsVisible] = useState(false)
+  const elementRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting)
+      },
+      { threshold: 0.1 }
+    )
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+  const bestseller_products = [
     {
-      name: "Microfibre Bathrobe - White",
-      price: 19.0,
-      priceVat: 22.8,
-      image: "/white-microfibre-bathrobe.jpg",
+      name: "Sakura Reed Diffuser",
+      price: 45.0,
+      priceVat: 54.0,
+      image: "/best-sellers-1.png",
     },
     {
-      name: "Waffle Bathrobe - White",
-      price: 16.0,
-      priceVat: 19.2,
-      image: "/white-waffle-bathrobe.jpg",
+      name: "Diffusol",
+      price: 89.0,
+      priceVat: 106.8,
+      image: "/best-sellers-4.png",
     },
     {
-      name: "Terry Towelling Bathrobe - White",
-      price: 17.8,
-      priceVat: 21.36,
-      image: "/white-terry-towelling-bathrobe.jpg",
+      name: "Bonbori",
+      price: 125.0,
+      priceVat: 150.0,
+      image: "/best-sellers-3.png",
     },
     {
-      name: "Velour Bathrobe - White",
-      price: 24.0,
-      priceVat: 28.8,
-      image: "/white-velour-bathrobe.jpg",
+      name: "Bonbori Room Spray",
+      price: 199.0,
+      priceVat: 238.8,
+      image: "/best-sellers-2.png",
     },
-    // {
-    //   name: "Striped Velour Bathrobe - White",
-    //   price: 26.8,
-    //   priceVat: 32.16,
-    //   image: "/white-striped-velour-bathrobe.jpg",
-    // },
-    // {
-    //   name: "Velour Bathrobe with Grey Piping - White",
-    //   price: 28.2,
-    //   priceVat: 33.84,
-    //   image: "/white-velour-bathrobe-grey-piping.jpg",
-    // },
-    // {
-    //   name: "Children's Microfibre Bathrobe - White",
-    //   price: 14.6,
-    //   priceVat: 17.52,
-    //   image: "/childrens-white-microfibre-bathrobe.jpg",
-    // },
+
   ]
 
   const geneva_products = [
@@ -100,11 +101,11 @@ export function ProductShowcase({ titleKey, category }: ProductShowcaseProps) {
   ]
 
   const products =
-    category === "bathrobes" ? bathrobe_products : category === "dispensers" ? geneva_products : products_we_love
+    category === "bestsellers" ? bestseller_products : category === "dispensers" ? geneva_products : products_we_love
 
   return (
-    <section className="py-12 md:py-16 lg:py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section ref={elementRef} className="py-12 md:py-16 lg:py-24 bg-background">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 md:mb-10 gap-4">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">{t(titleKey)}</h2>
           <Button variant="outline" size="sm" className="self-start sm:self-auto">
@@ -113,27 +114,39 @@ export function ProductShowcase({ titleKey, category }: ProductShowcaseProps) {
           </Button>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
-          {products.slice(0, 4).map((product) => (
-            <ProductCard
+          {products.slice(0, 4).map((product, index) => (
+            <div
               key={product.name}
-              name={product.name}
-              price={product.price}
-              originalPrice={product.priceVat}
-              image={product.image}
-            />
+              className={`transition-all duration-1000 ease-out ${isVisible ? 'scale-100 opacity-100' : 'scale-110 opacity-0'
+                }`}
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
+              <ProductCard
+                name={product.name}
+                price={product.price}
+                originalPrice={product.priceVat}
+                image={product.image}
+              />
+            </div>
           ))}
         </div>
-        
+
         {/* Show more products on larger screens */}
         <div className="hidden xl:grid xl:grid-cols-4 gap-4 md:gap-6 mt-4 md:mt-6">
-          {products.slice(4).map((product) => (
-            <ProductCard
+          {products.slice(4).map((product, index) => (
+            <div
               key={product.name}
-              name={product.name}
-              price={product.price}
-              originalPrice={product.priceVat}
-              image={product.image}
-            />
+              className={`transition-all duration-1000 ease-out ${isVisible ? 'scale-100 opacity-100' : 'scale-110 opacity-0'
+                }`}
+              style={{ transitionDelay: `${(index + 4) * 150}ms` }}
+            >
+              <ProductCard
+                name={product.name}
+                price={product.price}
+                originalPrice={product.priceVat}
+                image={product.image}
+              />
+            </div>
           ))}
         </div>
       </div>
