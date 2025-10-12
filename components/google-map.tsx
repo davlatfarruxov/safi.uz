@@ -25,9 +25,9 @@ export function GoogleMap() {
       </div>
 
       {/* Location Info Cards */}
-      <div className="grid gap-6 md:grid-cols-2 mt-8">
+      <div className="grid gap-6 md:grid-cols-1 mt-8">
         {/* Samarkand Office */}
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+        {/* <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
               🏢 {t("contact.locations.samarkand")}
@@ -64,7 +64,7 @@ export function GoogleMap() {
               <p className="text-gray-900 font-medium">Mon-Fri 9:00-18:00 (UTC+5)</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Tashkent Office */}
         <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
