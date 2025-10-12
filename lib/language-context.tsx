@@ -310,6 +310,12 @@ const translations: Record<Language, Record<string, string>> = {
     "star.rating.luxury.feature1": "Индивидуальные туалетные принадлежности",
     "star.rating.luxury.feature2": "Премиум постельное белье",
     "star.rating.luxury.feature3": "Эксклюзивные удобства",
+
+    // Premium Amenities Section
+    "premium.amenities.title": "Премиум удобства",
+    "premium.amenities.hero.title": "Роскошный отельный опыт",
+    "premium.amenities.hero.subtitle": "Исключительные удобства для взыскательных гостей",
+    "discover.collection": "Открыть коллекцию",
   },
   uz: {
     // Top Banner
@@ -606,6 +612,12 @@ const translations: Record<Language, Record<string, string>> = {
     "star.rating.luxury.feature1": "Maxsus gigiyena vositalari",
     "star.rating.luxury.feature2": "Premium choyshablar",
     "star.rating.luxury.feature3": "Eksklyuziv qulayliklar",
+
+    // Premium Amenities Section
+    "premium.amenities.title": "Premium qulayliklar",
+    "premium.amenities.hero.title": "Hashamatli mehmonxona tajribasi",
+    "premium.amenities.hero.subtitle": "Talabchan mehmonlar uchun ajoyib qulayliklar",
+    "discover.collection": "Kolleksiyani kashf etish",
   },
   en: {
     // Top Banner
@@ -868,5 +880,11 @@ const translations: Record<Language, Record<string, string>> = {
     "star.rating.luxury.feature1": "Bespoke toiletries",
     "star.rating.luxury.feature2": "Premium linens",
     "star.rating.luxury.feature3": "Exclusive amenities",
+
+    // Premium Amenities Section
+    "premium.amenities.title": "Premium Amenities",
+    "premium.amenities.hero.title": "Luxury Hotel Experience",
+    "premium.amenities.hero.subtitle": "Exceptional amenities for discerning guests",
+    "discover.collection": "Discover Collection",
   },
 }
