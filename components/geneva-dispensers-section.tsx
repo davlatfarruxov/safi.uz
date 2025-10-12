@@ -97,10 +97,10 @@ export function GenevaDispensersSection() {
                     {/* Price - Compact */}
                     <div className="mb-2">
                       <div className="text-sm font-bold text-gray-900">
-                        £{product.price.toFixed(2)}
+                        ${product.price.toFixed(2)}
                       </div>
                       <div className="text-xs text-gray-500 line-through">
-                        £{product.originalPrice.toFixed(2)} Inc. VAT
+                        ${product.originalPrice.toFixed(2)} Inc. VAT
                       </div>
                     </div>
                     
@@ -110,11 +110,7 @@ export function GenevaDispensersSection() {
                         <span className="mr-1">🛒</span>
                         {t("add.to.basket")}
                       </Button>
-                      <div className="flex items-center justify-center gap-1 text-gray-400">
-                        <input type="checkbox" className="w-3 h-3" />
-                        <span className="text-xs">{t("add.to.compare")}</span>
-                        <span className="text-sm">♡</span>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>

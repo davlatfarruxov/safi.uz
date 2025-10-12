@@ -102,9 +102,9 @@ const translations: Record<Language, Record<string, string>> = {
     "login.description":
       "Войдите в свою учетную запись для управления и отслеживания заказов, счетов и многого другого.",
     "already.customer": "Уже клиент? Войти",
-    "new.here": "Новый пользователь? Зарегистрироваться",
+    "new.here": "Зарегистрироваться",
     "luxury.accessories": "Роскошные аксессуары",
-    "shop.room.accessories": "Купить аксессуары для номеров",
+    "shop.room.accessories": "Купить аксессуары",
 
     // Categories
     "shop.bedroom": "Купить спальню",
@@ -163,11 +163,11 @@ const translations: Record<Language, Record<string, string>> = {
     miniFridges: "Мини-холодильники",
     shopMinibars: "Купить мини-бары",
     luxuryAccessories: "Роскошные аксессуары",
-    shopRoomAccessories: "Купить аксессуары для номеров",
+    shopRoomAccessories: "Купить аксессуары ",
     loginOrRegister: "Войти или зарегистрироваться",
     loginDescription: "Войдите в свою учетную запись для управления и отслеживания заказов, счетов и многого другого.",
     alreadyCustomer: "Уже клиент? Войти",
-    newHereRegister: "Новый пользователь? Зарегистрироваться",
+    newHereRegister: "Зарегистрироваться",
 
     // Product Showcase
     "discover.bathrobes": "Откройте для себя наши халаты",
@@ -205,6 +205,7 @@ const translations: Record<Language, Record<string, string>> = {
     "out.of": "из",
     "based.on": "на основе",
     reviews: "отзывов",
+    "verified.customer": "Проверенный покупатель",
 
     // Welcome Section
     "welcome.title": "Добро пожаловать в Safi Hotel Collection",
@@ -365,7 +366,7 @@ const translations: Record<Language, Record<string, string>> = {
     loginOrRegister: "Kirish yoki ro'yxatdan o'tish",
     loginDescription: "Buyurtmalar, hisob-fakturalar va boshqalarni boshqarish va kuzatish uchun hisobingizga kiring",
     alreadyCustomer: "Allaqachon mijoz? Kirish",
-    newHereRegister: "Yangi foydalanuvchi? Ro'yxatdan o'tish",
+    newHereRegister: " Ro'yxatdan o'tish",
 
     // Category Grid
     "shop.bedroom": "Yotoq xonasi uchun",
@@ -410,6 +411,7 @@ const translations: Record<Language, Record<string, string>> = {
     "out.of": "dan",
     "based.on": "asosida",
     reviews: "sharh",
+    "verified.customer": "Tasdiqlangan mijoz",
 
     // Welcome Section
     "welcome.title": "Safi Hotel Collection ga xush kelibsiz",
@@ -583,6 +585,7 @@ const translations: Record<Language, Record<string, string>> = {
     "out.of": "out of",
     "based.on": "based on",
     reviews: "reviews",
+    "verified.customer": "Verified Customer",
 
     // Welcome Section
     "welcome.title": "Welcome to Safi Hotel Collection",
