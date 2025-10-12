@@ -89,7 +89,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
             {/* Wishlist - hidden on small screens */}
             <Link href="/wishlist">
               <Button variant="ghost" size="icon" className="hidden sm:flex relative hover:bg-green-50 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
-                <Heart className="h-12 w-12" />
+                <Heart className="h-20 w-20" />
                 {wishlistCount > 0 && (
                   <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center text-[10px]">
                     {wishlistCount}
@@ -100,7 +100,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
 
             {/* Notifications */}
             <Button variant="ghost" size="icon" className="relative hidden sm:flex hover:bg-green-50 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
-              <Bell className="h-12 w-12" />
+              <Bell className="w-[200px] h-[200px]" />
               <span className="absolute top-0 right-0 bg-[#084b25] text-white text-xs rounded-full h-4 w-4 flex items-center justify-center text-[8px]">
                 0
               </span>
@@ -108,7 +108,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
 
             {/* Cart */}
             <Button variant="ghost" size="icon" className="hover:bg-green-50 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
-              <ShoppingCart className="h-12 w-12" />
+              <ShoppingCart className="h-20 w-20" />
             </Button>
           </div>
         </div>

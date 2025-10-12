@@ -6,6 +6,7 @@ import { CustomerReviews } from "@/components/customer-reviews"
 import { CategoryGrid } from "@/components/category-grid"
 import { ProductShowcase } from "@/components/product-showcase"
 import { GenevaDispensersSection } from "@/components/geneva-dispensers-section"
+import { StarRatingCards } from "@/components/star-rating-cards"
 import { ProductsWeLoveSection } from "@/components/products-we-love-section"
 import { PopularBrands } from "@/components/popular-brands"
 import { WelcomeSection } from "@/components/welcome-section"
@@ -19,12 +20,15 @@ export default function Home() {
       <Header showMainNavigation={false} />
       <main>
         <MainContent />
+        <Features />
         <CategoryGrid />
-        <CustomerReviews />
         <ProductShowcase titleKey="bestsellers" category="bestsellers" />
         <GenevaDispensersSection />
+        <StarRatingCards />
         <PopularBrands />
         <WelcomeSection />
+        <CustomerReviews />
+        <ProductsWeLoveSection />
         <DetailedReviews />
       </main>
       <Footer />
