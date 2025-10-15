@@ -153,7 +153,7 @@ export function AboutSection() {
             </div>
             <div className="relative">
               <Image
-                src="safi-banner1.jpg"
+                src="safi-banner1.JPG"
                 alt="Safi Hotel Collection Office"
                 width={600}
                 height={500}
