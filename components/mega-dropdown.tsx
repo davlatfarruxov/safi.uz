@@ -16,36 +16,36 @@ export function MegaDropdown({ category }: MegaDropdownProps) {
       {
         title: t("towels.comfort") || "Towels & Comfort",
         links: [
-          { name: t("towels") || "Towels", href: "/bathroom/towels" },
-          { name: t("hand.towels") || "Hand Towels & Face Cloths", href: "/bathroom/hand-towels" },
-          { name: t("bathrobes") || "Bathrobes", href: "/bathroom/bathrobes" },
-          { name: t("slippers") || "Slippers", href: "/bathroom/slippers" },
+          { name: t("towels") || "Towels", href: "/bathroom" },
+          { name: t("hand.towels") || "Hand Towels & Face Cloths", href: "/bathroom" },
+          { name: t("bathrobes") || "Bathrobes", href: "/bathroom" },
+          { name: t("slippers") || "Slippers", href: "/bathroom" },
         ],
       },
       {
         title: t("bathroom.equipment") || "Bathroom Equipment",
         links: [
-          { name: t("bath.shower.mats") || "Bath & Shower Mats", href: "/bathroom/bath-mats" },
-          { name: t("mirrors") || "Mirrors", href: "/bathroom/mirrors" },
-          { name: t("scales") || "Scales", href: "/bathroom/scales" },
-          { name: t("bins") || "Bins", href: "/bathroom/bins" },
-          { name: t("hygiene.bag.dispensers") || "Hygiene Bag Dispensers", href: "/bathroom/hygiene-dispensers" },
-          { name: t("tissue.box.covers") || "Tissue Box Covers", href: "/bathroom/tissue-covers" },
-          { name: t("toilet.brushes") || "Toilet Brushes", href: "/bathroom/toilet-brushes" },
+          { name: t("bath.shower.mats") || "Bath & Shower Mats", href: "/bathroom" },
+          { name: t("mirrors") || "Mirrors", href: "/bathroom" },
+          { name: t("scales") || "Scales", href: "/bathroom" },
+          { name: t("bins") || "Bins", href: "/bathroom" },
+          { name: t("hygiene.bag.dispensers") || "Hygiene Bag Dispensers", href: "/bathroom" },
+          { name: t("tissue.box.covers") || "Tissue Box Covers", href: "/bathroom" },
+          { name: t("toilet.brushes") || "Toilet Brushes", href: "/bathroom" },
         ],
       },
       {
         title: t("consumables") || "Consumables",
         links: [
-          { name: t("guest.amenities") || "Guest Amenities", href: "/bathroom/guest-amenities" },
-          { name: t("toiletries") || "Toiletries", href: "/bathroom/toiletries" },
+          { name: t("guest.amenities") || "Guest Amenities", href: "/bathroom" },
+          { name: t("toiletries") || "Toiletries", href: "/bathroom" },
         ],
       },
       {
         title: t("accessories") || "Accessories",
         links: [
-          { name: t("bathroom.accessories") || "Bathroom Accessories", href: "/bathroom/accessories" },
-          { name: t("display.trays") || "Display Trays", href: "/bathroom/display-trays" },
+          { name: t("bathroom.accessories") || "Bathroom Accessories", href: "/bathroom" },
+          { name: t("display.trays") || "Display Trays", href: "/bathroom" },
         ],
       },
     ],
@@ -79,24 +79,24 @@ export function MegaDropdown({ category }: MegaDropdownProps) {
       {
         title: t("guest.toiletries") || "Guest Toiletries",
         links: [
-          { name: t("shampoo") || "Shampoo", href: "/toiletries/shampoo" },
-          { name: t("conditioner") || "Conditioner", href: "/toiletries/conditioner" },
-          { name: t("body.wash") || "Body Wash", href: "/toiletries/body-wash" },
-          { name: t("soap") || "Soap", href: "/toiletries/soap" },
+          { name: t("shampoo") || "Shampoo", href: "/toiletries" },
+          { name: t("conditioner") || "Conditioner", href: "/toiletries" },
+          { name: t("body.wash") || "Body Wash", href: "/toiletries" },
+          { name: t("soap") || "Soap", href: "/toiletries" },
         ],
       },
       {
         title: t("dispensers") || "Dispensers", 
         links: [
-          { name: t("wall.dispensers") || "Wall Mounted Dispensers", href: "/toiletries/wall-dispensers" },
-          { name: t("refills") || "Refills", href: "/toiletries/refills" },
+          { name: t("wall.dispensers") || "Wall Mounted Dispensers", href: "/toiletries" },
+          { name: t("refills") || "Refills", href: "/toiletries" },
         ],
       },
       {
         title: t("packaging") || "Packaging",
         links: [
-          { name: t("bottles") || "Bottles", href: "/toiletries/bottles" },
-          { name: t("tubes") || "Tubes", href: "/toiletries/tubes" },
+          { name: t("bottles") || "Bottles", href: "/toiletries" },
+          { name: t("tubes") || "Tubes", href: "/toiletries" },
         ],
       },
     ],
@@ -130,24 +130,24 @@ export function MegaDropdown({ category }: MegaDropdownProps) {
       {
         title: t("welcome.kits") || "Welcome Kits",
         links: [
-          { name: t("premium.welcome") || "Premium Welcome Kits", href: "/amenities/welcome-kits" },
-          { name: t("budget.welcome") || "Budget Welcome Kits", href: "/amenities/budget-kits" },
-          { name: t("custom.welcome") || "Custom Welcome Kits", href: "/amenities/custom-kits" },
+          { name: t("premium.welcome") || "Premium Welcome Kits", href: "/" },
+          { name: t("budget.welcome") || "Budget Welcome Kits", href: "" },
+          { name: t("custom.welcome") || "Custom Welcome Kits", href: "" },
         ],
       },
       {
         title: t("room.amenities") || "Room Amenities",
         links: [
-          { name: t("coffee.station") || "Coffee Station", href: "/amenities/coffee-station" },
-          { name: t("mini.bar") || "Mini Bar Supplies", href: "/amenities/mini-bar" },
-          { name: t("room.service") || "Room Service", href: "/amenities/room-service" },
+          { name: t("coffee.station") || "Coffee Station", href: "" },
+          { name: t("mini.bar") || "Mini Bar Supplies", href: "" },
+          { name: t("room.service") || "Room Service", href: "" },
         ],
       },
       {
         title: t("spa.wellness") || "Spa & Wellness",
         links: [
-          { name: t("spa.amenities") || "Spa Amenities", href: "/amenities/spa" },
-          { name: t("wellness.kits") || "Wellness Kits", href: "/amenities/wellness" },
+          { name: t("spa.amenities") || "Spa Amenities", href: "" },
+          { name: t("wellness.kits") || "Wellness Kits", href: "" },
         ],
       },
     ],

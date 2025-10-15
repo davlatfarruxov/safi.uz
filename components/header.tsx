@@ -122,7 +122,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
             {t("about.us")}
           </Link>
 
-          <Link href="/products" className="text-gray-800 hover:text-[#084b25] transition-all duration-300 hover:scale-105 px-2 py-1">
+          <Link href="/bathroom" className="text-gray-800 hover:text-[#084b25] transition-all duration-300 hover:scale-105 px-2 py-1">
             {t("products")}
           </Link>
           <Link href="/for-partners" className="text-gray-800 hover:text-[#084b25] transition-all duration-300 hover:scale-105 px-2 py-1">
@@ -253,7 +253,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
                       <Link href="/factory" className="text-gray-700 hover:text-[#7B6B8F] py-2 block">
                         {t("factory")}
                       </Link>
-                      <Link href="/products" className="text-gray-700 hover:text-[#7B6B8F] py-2 block">
+                      <Link href="/bathroom" className="text-gray-700 hover:text-[#7B6B8F] py-2 block">
                         {t("products")}
                       </Link>
                       <Link href="/for-partners" className="text-gray-700 hover:text-[#7B6B8F] py-2 block">

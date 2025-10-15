@@ -19,8 +19,9 @@ export function StarRatingCards() {
         t("star.rating.budget.feature2"),
         t("star.rating.budget.feature3")
       ],
-      bgColor: "bg-gray-50",
-      borderColor: "border-gray-200",
+      bgColor: "bg-slate-50",
+      borderColor: "border-slate-200",
+      accentColor: "text-slate-600",
     },
     {
       stars: 2,
@@ -31,8 +32,9 @@ export function StarRatingCards() {
         t("star.rating.economy.feature2"),
         t("star.rating.economy.feature3")
       ],
-      bgColor: "bg-gray-100",
-      borderColor: "border-gray-300",
+      bgColor: "bg-emerald-50",
+      borderColor: "border-emerald-200",
+      accentColor: "text-emerald-700",
     },
     {
       stars: 3,
@@ -43,8 +45,9 @@ export function StarRatingCards() {
         t("star.rating.midrange.feature2"),
         t("star.rating.midrange.feature3")
       ],
-      bgColor: "bg-amber-50",
-      borderColor: "border-amber-200",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200",
+      accentColor: "text-blue-700",
     },
     {
       stars: 4,
@@ -55,8 +58,9 @@ export function StarRatingCards() {
         t("star.rating.upscale.feature2"),
         t("star.rating.upscale.feature3")
       ],
-      bgColor: "bg-amber-100",
-      borderColor: "border-amber-300",
+      bgColor: "bg-purple-50",
+      borderColor: "border-purple-200",
+      accentColor: "text-purple-700",
     },
     {
       stars: 5,
@@ -67,8 +71,9 @@ export function StarRatingCards() {
         t("star.rating.luxury.feature2"),
         t("star.rating.luxury.feature3")
       ],
-      bgColor: "bg-amber-200",
-      borderColor: "border-amber-400",
+      bgColor: "bg-gradient-to-br from-amber-50 to-yellow-50",
+      borderColor: "border-amber-300",
+      accentColor: "text-amber-800",
     },
   ]
 
@@ -78,13 +83,13 @@ export function StarRatingCards() {
   }
 
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-gradient-to-b from-gray-50 to-white py-16 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900 lg:text-5xl">
+          <h2 className="mb-4 font-serif text-4xl font-bold text-[#084b25] lg:text-5xl">
             {t("star.rating.title")}
           </h2>
-          <p className="text-pretty text-lg text-gray-600">
+          <p className="text-pretty text-lg text-gray-700 max-w-2xl mx-auto">
             {t("star.rating.subtitle")}
           </p>
         </div>
@@ -93,32 +98,32 @@ export function StarRatingCards() {
           {starCategories.map((category) => (
             <div
               key={category.stars}
-              className={`flex flex-col rounded-lg border-2 ${category.borderColor} ${category.bgColor} p-6 transition-all hover:scale-105 hover:shadow-lg`}
+              className={`flex flex-col rounded-xl border-2 ${category.borderColor} ${category.bgColor} p-6 transition-all hover:scale-105 hover:shadow-xl hover:border-[#084b25] relative overflow-hidden`}
             >
               {/* Stars */}
               <div className="mb-4 flex justify-center gap-1">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star
                     key={star}
-                    className={`h-5 w-5 ${
-                      star <= category.stars ? "fill-yellow-400 text-yellow-400" : "fill-gray-300 text-gray-300"
+                    className={`h-6 w-6 ${
+                      star <= category.stars ? "fill-amber-400 text-amber-400 drop-shadow-sm" : "fill-gray-200 text-gray-200"
                     }`}
                   />
                 ))}
               </div>
 
               {/* Title */}
-              <h3 className="mb-2 text-center font-serif text-xl font-bold text-gray-900">{category.title}</h3>
+              <h3 className={`mb-2 text-center font-serif text-xl font-bold ${category.accentColor}`}>{category.title}</h3>
 
               {/* Description */}
-              <p className="mb-6 text-pretty text-center text-sm text-gray-600">{category.description}</p>
+              <p className="mb-6 text-pretty text-center text-sm text-gray-700">{category.description}</p>
 
               {/* Features */}
-              <ul className="mb-6 flex-1 space-y-2">
+              <ul className="mb-6 flex-1 space-y-3">
                 {category.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm text-gray-900">
-                    <span className="mt-0.5 text-[#084b25]">✓</span>
-                    <span>{feature}</span>
+                  <li key={index} className="flex items-start gap-3 text-sm text-gray-800">
+                    <span className="mt-0.5 text-[#084b25] font-bold text-base">✓</span>
+                    <span className="leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -127,7 +132,7 @@ export function StarRatingCards() {
               <Button
                 onClick={() => handleSelectRating(category.stars)}
                 variant="outline"
-                className="w-full border-gray-300 hover:bg-[#084b25] hover:text-white transition-colors"
+                className={`w-full border-2 ${category.borderColor} ${category.accentColor} hover:bg-[#084b25] hover:text-white hover:border-[#084b25] transition-all duration-300 font-semibold`}
               >
                 {t("star.rating.explore")}
               </Button>
