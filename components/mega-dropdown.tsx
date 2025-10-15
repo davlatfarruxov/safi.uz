@@ -117,38 +117,60 @@ export function MegaDropdown({ category }: MegaDropdownProps) {
   const menuData = category === "bathroom" ? bathroomMenu : category === "bedroom" ? bedroomMenu : toiletriesMenu
 
   return (
-    <div className="absolute left-0 right-0 top-full bg-white border-t border-gray-200 shadow-lg z-50">
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-5 gap-8">
-          {/* Menu columns */}
-          {menuData.columns.map((column, idx) => (
-            <div key={idx}>
-              <h3 className="font-semibold text-gray-900 mb-4">{column.title}</h3>
-              <ul className="space-y-2">
-                {column.links.map((link, linkIdx) => (
-                  <li key={linkIdx}>
-                    <Link href={link.href} className="text-sm text-gray-600 hover:text-[#7B6B8F]">
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+    <div className="absolute left-0 right-0 top-full bg-white border border-gray-200 shadow-xl z-[9999] min-h-[400px]">
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="grid grid-cols-12 gap-8">
+          {/* Menu columns - 8 columns */}
+          <div className="col-span-8">
+            <div className="grid grid-cols-4 gap-6">
+              {menuData.columns.map((column, idx) => (
+                <div key={idx}>
+                  <h3 className="font-semibold text-gray-900 mb-4 text-sm uppercase tracking-wide border-b border-gray-200 pb-2">
+                    {column.title}
+                  </h3>
+                  <ul className="space-y-3">
+                    {column.links.map((link, linkIdx) => (
+                      <li key={linkIdx}>
+                        <Link 
+                          href={link.href} 
+                          className="text-sm text-gray-600 hover:text-[#084b25] transition-colors duration-200 block py-1 hover:pl-2"
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
 
-          {/* Promotional section */}
-          <div className="col-span-1">
-            <div className="bg-gray-100 rounded-lg overflow-hidden">
-              <Image
-                src={menuData.image || "/placeholder.svg"}
-                alt={menuData.title}
-                width={300}
-                height={200}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="font-semibold text-gray-900 mb-2">{menuData.title}</h3>
-                <p className="text-sm text-gray-600">{menuData.description}</p>
+          {/* Promotional section - 4 columns */}
+          <div className="col-span-4">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl overflow-hidden shadow-lg border border-gray-200 h-full">
+              <div className="relative h-52">
+                <Image
+                  src={menuData.image || "/api/placeholder/400/300"}
+                  alt={menuData.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <h3 className="font-bold text-xl mb-2">{menuData.title}</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-600 mb-4 leading-relaxed text-sm">{menuData.description}</p>
+                <Link 
+                  href={`/${category}`}
+                  className="inline-flex items-center bg-[#084b25] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#06391d] transition-colors text-sm"
+                >
+                  View All Products
+                  <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>
