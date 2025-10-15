@@ -149,3 +149,37 @@
     display: none;
   }
 }
+
+/* Global scrollbar hiding for navbar and all elements */
+* {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none !important; /* WebKit browsers */
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Ensure no horizontal overflow */
+html, body {
+  overflow-x: hidden !important;
+}
+
+/* Navigation specific styles */
+nav {
+  overflow: visible !important;
+}
+
+/* Header specific scrollbar hiding */
+header * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+header *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}

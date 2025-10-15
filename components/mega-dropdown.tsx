@@ -2,177 +2,224 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { useLanguage } from "@/lib/language-context"
 
 interface MegaDropdownProps {
-  category: "bathroom" | "bedroom" | "toiletries" | "hotel-guest-amenities" | "eco-friendly" | "brands"
+  category: "bathroom" | "bedroom" | "toiletries" | "amenities" | "eco"
 }
 
 export function MegaDropdown({ category }: MegaDropdownProps) {
+  const { t } = useLanguage()
+
   const bathroomMenu = {
     columns: [
       {
-        title: "Towels & Comfort",
+        title: t("towels.comfort") || "Towels & Comfort",
         links: [
-          { name: "Towels", href: "/bathroom/towels" },
-          { name: "Hand Towels & Face Cloths", href: "/bathroom/hand-towels" },
-          { name: "Bathrobes", href: "/bathroom/bathrobes" },
-          { name: "Slippers", href: "/bathroom/slippers" },
+          { name: t("towels") || "Towels", href: "/bathroom/towels" },
+          { name: t("hand.towels") || "Hand Towels & Face Cloths", href: "/bathroom/hand-towels" },
+          { name: t("bathrobes") || "Bathrobes", href: "/bathroom/bathrobes" },
+          { name: t("slippers") || "Slippers", href: "/bathroom/slippers" },
         ],
       },
       {
-        title: "Bathroom Equipment",
+        title: t("bathroom.equipment") || "Bathroom Equipment",
         links: [
-          { name: "Bath & Shower Mats", href: "/bathroom/bath-mats" },
-          { name: "Mirrors", href: "/bathroom/mirrors" },
-          { name: "Scales", href: "/bathroom/scales" },
-          { name: "Bins", href: "/bathroom/bins" },
-          { name: "Hygiene Bag Dispensers", href: "/bathroom/hygiene-dispensers" },
-          { name: "Tissue Box Covers", href: "/bathroom/tissue-covers" },
-          { name: "Toilet Brushes", href: "/bathroom/toilet-brushes" },
+          { name: t("bath.shower.mats") || "Bath & Shower Mats", href: "/bathroom/bath-mats" },
+          { name: t("mirrors") || "Mirrors", href: "/bathroom/mirrors" },
+          { name: t("scales") || "Scales", href: "/bathroom/scales" },
+          { name: t("bins") || "Bins", href: "/bathroom/bins" },
+          { name: t("hygiene.bag.dispensers") || "Hygiene Bag Dispensers", href: "/bathroom/hygiene-dispensers" },
+          { name: t("tissue.box.covers") || "Tissue Box Covers", href: "/bathroom/tissue-covers" },
+          { name: t("toilet.brushes") || "Toilet Brushes", href: "/bathroom/toilet-brushes" },
         ],
       },
       {
-        title: "Consumables",
+        title: t("consumables") || "Consumables",
         links: [
-          { name: "Guest Amenities", href: "/bathroom/guest-amenities" },
-          { name: "Toiletries", href: "/bathroom/toiletries" },
+          { name: t("guest.amenities") || "Guest Amenities", href: "/bathroom/guest-amenities" },
+          { name: t("toiletries") || "Toiletries", href: "/bathroom/toiletries" },
         ],
       },
       {
-        title: "Accessories",
+        title: t("accessories") || "Accessories",
         links: [
-          { name: "Bathroom Accessories", href: "/bathroom/accessories" },
-          { name: "Display Trays", href: "/bathroom/display-trays" },
+          { name: t("bathroom.accessories") || "Bathroom Accessories", href: "/bathroom/accessories" },
+          { name: t("display.trays") || "Display Trays", href: "/bathroom/display-trays" },
         ],
       },
     ],
-    image: "/bathroom-products-display.jpg",
-    title: "Shop All Bathroom",
-    description: "Discover all our products to service your guest bathrooms",
-  }
-
-  const bedroomMenu = {
-    columns: [
+    featuredProducts: [
       {
-        title: "Bedding",
-        links: [
-          { name: "Bed Linen", href: "/bedroom/bed-linen" },
-          { name: "Pillows", href: "/bedroom/pillows" },
-          { name: "Duvets", href: "/bedroom/duvets" },
-          { name: "Mattress Protectors", href: "/bedroom/mattress-protectors" },
-        ],
+        name: "Premium Hotel Towels",
+        price: "$45.99",
+        image: "/api/placeholder/120/120",
+        href: "/bathroom/towels/premium"
       },
       {
-        title: "Furniture",
-        links: [
-          { name: "Wardrobes", href: "/bedroom/wardrobes" },
-          { name: "Hangers", href: "/bedroom/hangers" },
-          { name: "Luggage Racks", href: "/bedroom/luggage-racks" },
-        ],
+        name: "Luxury Bathrobes",
+        price: "$89.99", 
+        image: "/api/placeholder/120/120",
+        href: "/bathroom/bathrobes/luxury"
       },
       {
-        title: "Accessories",
-        links: [
-          { name: "Bedroom Accessories", href: "/bedroom/accessories" },
-          { name: "Lighting", href: "/bedroom/lighting" },
-        ],
-      },
+        name: "Spa Slippers",
+        price: "$12.99",
+        image: "/api/placeholder/120/120", 
+        href: "/bathroom/slippers/spa"
+      }
     ],
-    image: "/luxury-hotel-bedding-white-linens.jpg",
-    title: "Shop All Bedroom",
-    description: "Create the perfect sleeping experience for your guests",
+    heroImage: "/api/placeholder/400/300",
+    title: t("shop.all.bathroom") || "Shop All Bathroom",
+    description: t("discover.bathroom.products") || "Discover all our products to service your guest bathrooms",
   }
 
   const toiletriesMenu = {
     columns: [
       {
-        title: "Guest Toiletries",
+        title: t("guest.toiletries") || "Guest Toiletries",
         links: [
-          { name: "Shampoo", href: "/toiletries/shampoo" },
-          { name: "Conditioner", href: "/toiletries/conditioner" },
-          { name: "Body Wash", href: "/toiletries/body-wash" },
-          { name: "Soap", href: "/toiletries/soap" },
+          { name: t("shampoo") || "Shampoo", href: "/toiletries/shampoo" },
+          { name: t("conditioner") || "Conditioner", href: "/toiletries/conditioner" },
+          { name: t("body.wash") || "Body Wash", href: "/toiletries/body-wash" },
+          { name: t("soap") || "Soap", href: "/toiletries/soap" },
         ],
       },
       {
-        title: "Dispensers",
+        title: t("dispensers") || "Dispensers", 
         links: [
-          { name: "Wall Mounted Dispensers", href: "/toiletries/wall-dispensers" },
-          { name: "Refills", href: "/toiletries/refills" },
+          { name: t("wall.dispensers") || "Wall Mounted Dispensers", href: "/toiletries/wall-dispensers" },
+          { name: t("refills") || "Refills", href: "/toiletries/refills" },
         ],
       },
       {
-        title: "Packaging",
+        title: t("packaging") || "Packaging",
         links: [
-          { name: "Bottles", href: "/toiletries/bottles" },
-          { name: "Tubes", href: "/toiletries/tubes" },
+          { name: t("bottles") || "Bottles", href: "/toiletries/bottles" },
+          { name: t("tubes") || "Tubes", href: "/toiletries/tubes" },
         ],
       },
     ],
-    image: "/luxury-hotel-toiletries-and-amenities.jpg",
-    title: "Shop All Toiletries",
-    description: "Premium toiletries for your guests",
+    featuredProducts: [
+      {
+        name: "Geneva Green Dispensers",
+        price: "$24.99",
+        image: "/api/placeholder/120/120",
+        href: "/toiletries/dispensers/geneva"
+      },
+      {
+        name: "Natural Shampoo Set",
+        price: "$18.99",
+        image: "/api/placeholder/120/120",
+        href: "/toiletries/shampoo/natural"
+      },
+      {
+        name: "Eco Body Wash",
+        price: "$15.99",
+        image: "/api/placeholder/120/120",
+        href: "/toiletries/body-wash/eco"
+      }
+    ],
+    heroImage: "/api/placeholder/400/300",
+    title: t("shop.all.toiletries") || "Shop All Toiletries",
+    description: t("premium.toiletries.guests") || "Premium toiletries for your guests",
   }
 
-  const menuData = category === "bathroom" ? bathroomMenu : category === "bedroom" ? bedroomMenu : toiletriesMenu
+  const amenitiesMenu = {
+    columns: [
+      {
+        title: t("welcome.kits") || "Welcome Kits",
+        links: [
+          { name: t("premium.welcome") || "Premium Welcome Kits", href: "/amenities/welcome-kits" },
+          { name: t("budget.welcome") || "Budget Welcome Kits", href: "/amenities/budget-kits" },
+          { name: t("custom.welcome") || "Custom Welcome Kits", href: "/amenities/custom-kits" },
+        ],
+      },
+      {
+        title: t("room.amenities") || "Room Amenities",
+        links: [
+          { name: t("coffee.station") || "Coffee Station", href: "/amenities/coffee-station" },
+          { name: t("mini.bar") || "Mini Bar Supplies", href: "/amenities/mini-bar" },
+          { name: t("room.service") || "Room Service", href: "/amenities/room-service" },
+        ],
+      },
+      {
+        title: t("spa.wellness") || "Spa & Wellness",
+        links: [
+          { name: t("spa.amenities") || "Spa Amenities", href: "/amenities/spa" },
+          { name: t("wellness.kits") || "Wellness Kits", href: "/amenities/wellness" },
+        ],
+      },
+    ],
+    featuredProducts: [
+      {
+        name: "Premium Welcome Kit",
+        price: "$89.99",
+        image: "/api/placeholder/120/120",
+        href: "/amenities/welcome-kits/premium"
+      },
+      {
+        name: "Coffee Station Set",
+        price: "$124.99",
+        image: "/api/placeholder/120/120",
+        href: "/amenities/coffee-station/deluxe"
+      },
+      {
+        name: "Spa Wellness Kit",
+        price: "$156.99",
+        image: "/api/placeholder/120/120",
+        href: "/amenities/spa/wellness"
+      }
+    ],
+    heroImage: "/api/placeholder/400/300",
+    title: t("shop.all.amenities") || "Shop All Amenities",
+    description: t("complete.amenity.solutions") || "Complete amenity solutions for exceptional guest experiences",
+  }
+
+  const getMenuData = () => {
+    switch(category) {
+      case "bathroom": return bathroomMenu
+      case "toiletries": return toiletriesMenu  
+      case "amenities": return amenitiesMenu
+      default: return bathroomMenu
+    }
+  }
+
+  const menuData = getMenuData()
 
   return (
-    <div className="absolute left-0 right-0 top-full bg-white border border-gray-200 shadow-xl z-[9999] min-h-[400px]">
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-12 gap-8">
-          {/* Menu columns - 8 columns */}
-          <div className="col-span-8">
-            <div className="grid grid-cols-4 gap-6">
-              {menuData.columns.map((column, idx) => (
-                <div key={idx}>
-                  <h3 className="font-semibold text-gray-900 mb-4 text-sm uppercase tracking-wide border-b border-gray-200 pb-2">
-                    {column.title}
-                  </h3>
-                  <ul className="space-y-3">
-                    {column.links.map((link, linkIdx) => (
-                      <li key={linkIdx}>
-                        <Link 
-                          href={link.href} 
-                          className="text-sm text-gray-600 hover:text-[#084b25] transition-colors duration-200 block py-1 hover:pl-2"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+    <div className="absolute left-0 top-full bg-white border border-gray-200 shadow-lg z-[9999] min-w-[280px] rounded-md">
+      <div className="p-4">
+        {/* Single column with all links */}
+        <div className="space-y-4">
+          {menuData.columns.map((column, idx) => (
+            <div key={idx}>
+              <h3 className="font-semibold text-gray-900 mb-2 text-sm border-b border-gray-100 pb-1">
+                {column.title}
+              </h3>
+              <ul className="space-y-1 mb-3">
+                {column.links.map((link, linkIdx) => (
+                  <li key={linkIdx}>
+                    <Link 
+                      href={link.href} 
+                      className="text-sm text-gray-600 hover:text-[#084b25] hover:bg-gray-50 transition-colors block py-1 px-2 rounded"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-
-          {/* Promotional section - 4 columns */}
-          <div className="col-span-4">
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl overflow-hidden shadow-lg border border-gray-200 h-full">
-              <div className="relative h-52">
-                <Image
-                  src={menuData.image || "/api/placeholder/400/300"}
-                  alt={menuData.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="font-bold text-xl mb-2">{menuData.title}</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-600 mb-4 leading-relaxed text-sm">{menuData.description}</p>
-                <Link 
-                  href={`/${category}`}
-                  className="inline-flex items-center bg-[#084b25] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#06391d] transition-colors text-sm"
-                >
-                  View All Products
-                  <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
+          ))}
+          
+          {/* View All link */}
+          <div className="border-t border-gray-200 pt-3">
+            <Link 
+              href={`/${category}`}
+              className="block text-center bg-[#084b25] text-white py-2 px-4 rounded text-sm font-medium hover:bg-[#06391d] transition-colors"
+            >
+              View All {menuData.title}
+            </Link>
           </div>
         </div>
       </div>
