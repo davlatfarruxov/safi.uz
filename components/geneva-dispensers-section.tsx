@@ -95,18 +95,18 @@ export function GenevaDispensersSection() {
                     </h3>
                     
                     {/* Price - Compact */}
-                    <div className="mb-2">
+                    {/* <div className="mb-2">
                       <div className="text-sm font-bold text-gray-900">
                         ${product.price.toFixed(2)}
                       </div>
                       <div className="text-xs text-gray-500 line-through">
                         ${product.originalPrice.toFixed(2)} Inc. VAT
                       </div>
-                    </div>
+                    </div> */}
                     
                     {/* Buttons - Compact */}
                     <div className="flex flex-col gap-1 w-full mt-auto">
-                      <Button className="bg-[#6B46C1] hover:bg-[#553C9A] text-white text-xs py-1.5 w-full">
+                      <Button className="bg-[#084b25] hover:bg-[#06391d]   text-white text-xs py-1.5 w-full">
                         <span className="mr-1">🛒</span>
                         {t("add.to.basket")}
                       </Button>

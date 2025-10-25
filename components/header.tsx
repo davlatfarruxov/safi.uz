@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Search, Heart, Bell, ShoppingCart, ChevronDown, Menu, X, Instagram, Youtube, MessageCircle, Send } from "lucide-react"
+import { Search, Heart, Bell, ShoppingCart, ChevronDown, Menu, X, Instagram, Youtube, MessageCircle, Send, Facebook } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
@@ -22,7 +22,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
   const { wishlistCount } = useWishlist()
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50 scrollbar-hide" style={{overflow: 'visible', scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+    <header className="bg-white border-b border-gray-200 sticky top-0 z-50 scrollbar-hide" style={{ overflow: 'visible', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
       {/* Top section with logo, search, and actions */}
       <div className="max-w-full mx-auto px-6">
         <div className="flex items-center justify-between py-3 md:py-4 gap-2 md:gap-4">
@@ -74,7 +74,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
               </div>
             </div>
 
-            {/* User dropdown - hidden on mobile */}
+            {/* User dropdown - hidden on mobile
             <Button
               variant="ghost"
               className="hidden xl:flex items-center gap-2 text-sm h-12 px-4 border border-gray-300 rounded-md bg-gray-50 hover:bg-white hover:border-gray-400 transition-colors min-w-[120px]"
@@ -84,7 +84,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
                 <span className="font-medium text-gray-700">{t("log.in")}</span>
               </div>
               <ChevronDown className="h-4 w-4 text-gray-500" />
-            </Button>
+            </Button> */}
 
             {/* Wishlist - hidden on small screens */}
             <Link href="/wishlist">
@@ -114,7 +114,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
         </div>
 
         {/* Top navigation links */}
-        <div className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 pb-3 text-base font-bold scrollbar-hide px-4" style={{overflow: 'visible', scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+        <div className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 pb-3 text-base font-bold scrollbar-hide px-4" style={{ overflow: 'visible', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           <Link href="/" className="text-gray-800 hover:text-[#084b25] transition-all duration-300 hover:scale-105 px-2 py-1">
             {t("main")}
           </Link>
@@ -122,7 +122,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
             {t("about.us")}
           </Link>
 
-          <Link href="/bathroom" className="text-gray-800 hover:text-[#084b25] transition-all duration-300 hover:scale-105 px-2 py-1">
+          <Link href="/new" className="text-gray-800 hover:text-[#084b25] transition-all duration-300 hover:scale-105 px-2 py-1">
             {t("products")}
           </Link>
           <Link href="/for-partners" className="text-gray-800 hover:text-[#084b25] transition-all duration-300 hover:scale-105 px-2 py-1">
@@ -137,14 +137,14 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
           <LanguageSwitcher />
           {/* Social Media Icons */}
           <div className="flex items-center gap-4 ml-6">
-            <a href="https://instagram.com/safihotelcollection" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
+            <a href="https://www.instagram.com/safi_hotel_collection/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="https://t.me/safihotelcollection" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
+            <a href="https://t.me/safi_hotel_collection" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
               <Send className="h-5 w-5" />
             </a>
-            <a href="https://youtube.com/@safihotelcollection" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
-              <Youtube className="h-5 w-5" />
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#084b25] transition-all duration-300 hover:scale-110">
+              <Facebook className="h-5 w-5" />
             </a>
           </div>
         </div>
@@ -168,78 +168,116 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
       {showMainNavigation && (
         <div className="border-t border-gray-200 relative">
           <div className="max-w-full mx-auto px-6">
-            {/* Desktop navigation */}
-            <nav className="hidden lg:flex items-center justify-center gap-8 xl:gap-12 py-4 text-base font-bold scrollbar-hide px-4" style={{overflow: 'visible', scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+            {/* Desktop navigation - New 7 sections */}
+            <nav className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 py-4 text-sm font-bold scrollbar-hide px-4" style={{ overflow: 'visible', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
               <div
                 className="relative"
-                onMouseEnter={() => setActiveDropdown("bathroom")}
+                onMouseEnter={() => setActiveDropdown("new")}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <Link href="/bathroom" className="text-gray-800 hover:text-[#084b25] flex items-center gap-1 whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
-                  {t("bathroom")} <ChevronDown className="h-4 w-4" />
+                <Link href="/new" className="text-gray-800 hover:text-[#084b25] flex items-center gap-1 whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
+                  {t("nav.new")} <ChevronDown className="h-4 w-4" />
                 </Link>
-                {activeDropdown === "bathroom" && <MegaDropdown category="bathroom" />}
+
               </div>
-              <div
-                className="relative"
-                onMouseEnter={() => setActiveDropdown("toiletries")}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <Link href="/toiletries" className="text-gray-800 hover:text-[#084b25] flex items-center gap-1 whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
-                  {t("toiletries")} <ChevronDown className="h-4 w-4" />
-                </Link>
-                {activeDropdown === "toiletries" && <MegaDropdown category="toiletries" />}
-              </div>
-              <div
-                className="relative"
-                onMouseEnter={() => setActiveDropdown("amenities")}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <Link href="/hotel-guest-amenities" className="text-gray-800 hover:text-[#084b25] flex items-center gap-1 whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
-                  {t("hotel.guest.amenities")} <ChevronDown className="h-4 w-4" />
-                </Link>
-                {activeDropdown === "amenities" && <MegaDropdown category="amenities" />}
-              </div>
-              <Link href="/childrens-amenities" className="text-gray-800 hover:text-[#084b25] whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
-                {t("childrens.amenities")}
-              </Link>
-              <Link href="/pet-friendly" className="text-gray-800 hover:text-[#084b25] whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
-                {t("pet.friendly")}
-              </Link>
+
               <div
                 className="relative"
                 onMouseEnter={() => setActiveDropdown("eco")}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <Link href="/eco-friendly" className="text-gray-800 hover:text-[#084b25] flex items-center gap-1 whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
-                  {t("eco.friendly.products")} <ChevronDown className="h-4 w-4" />
+                <Link href="/eco-concept" className="text-gray-800 hover:text-[#084b25] flex items-center gap-1 whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
+                  {t("nav.eco.concept")} <ChevronDown className="h-4 w-4" />
                 </Link>
-                {activeDropdown === "eco" && <MegaDropdown category="eco" />}
+
+              </div>
+
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveDropdown("bedroom")}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <Link href="/bedroom-zone" className="text-gray-800 hover:text-[#084b25] flex items-center gap-1 whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
+                  {t("nav.bedroom.zone")} <ChevronDown className="h-4 w-4" />
+                </Link>
+
+              </div>
+
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveDropdown("bathroom")}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <Link href="/bathroom-zone" className="text-gray-800 hover:text-[#084b25] flex items-center gap-1 whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
+                  {t("nav.bathroom.zone")} <ChevronDown className="h-4 w-4" />
+                </Link>
+
+              </div>
+
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveDropdown("guest")}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <Link href="/guest-zone" className="text-gray-800 hover:text-[#084b25] flex items-center gap-1 whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
+                  {t("nav.guest.zone")} <ChevronDown className="h-4 w-4" />
+                </Link>
+
+              </div>
+
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveDropdown("components")}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <Link href="/hotel-components" className="text-gray-800 hover:text-[#084b25] flex items-center gap-1 whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
+                  {t("nav.hotel.components")} <ChevronDown className="h-4 w-4" />
+                </Link>
+
+              </div>
+
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveDropdown("cleaning")}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <Link href="/cleaning-equipment" className="text-gray-800 hover:text-[#084b25] flex items-center gap-1 whitespace-nowrap transition-all duration-300 hover:scale-105 font-bold px-2 py-1">
+                  {t("nav.cleaning.equipment")} <ChevronDown className="h-4 w-4" />
+                </Link>
+
               </div>
             </nav>
+
+            {/* Dropdown - positioned at navbar container level */}
+            {activeDropdown && (
+              <MegaDropdown category={activeDropdown as "new" | "eco" | "bedroom" | "bathroom" | "guest" | "components" | "cleaning"} />
+            )}
 
             {/* Mobile navigation menu */}
             {mobileMenuOpen && (
               <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-50">
                 <nav className="max-w-7xl mx-auto px-4 py-4">
                   <div className="flex flex-col space-y-4">
-                    <Link href="/bathroom" className="text-gray-700 hover:text-[#7B6B8F] py-2">
-                      {t("bathroom")}
+                    <Link href="/new" className="text-gray-700 hover:text-[#084b25] py-2">
+                      {t("nav.new")}
                     </Link>
-                    <Link href="/toiletries" className="text-gray-700 hover:text-[#7B6B8F] py-2">
-                      {t("toiletries")}
+                    <Link href="/eco-concept" className="text-gray-700 hover:text-[#084b25] py-2">
+                      {t("nav.eco.concept")}
                     </Link>
-                    <Link href="/hotel-guest-amenities" className="text-gray-700 hover:text-[#7B6B8F] py-2">
-                      {t("hotel.guest.amenities")}
+                    <Link href="/bedroom-zone" className="text-gray-700 hover:text-[#084b25] py-2">
+                      {t("nav.bedroom.zone")}
                     </Link>
-                    <Link href="/childrens-amenities" className="text-gray-700 hover:text-[#7B6B8F] py-2">
-                      {t("childrens.amenities")}
+                    <Link href="/bathroom-zone" className="text-gray-700 hover:text-[#084b25] py-2">
+                      {t("nav.bathroom.zone")}
                     </Link>
-                    <Link href="/pet-friendly" className="text-gray-700 hover:text-[#7B6B8F] py-2">
-                      {t("pet.friendly")}
+                    <Link href="/guest-zone" className="text-gray-700 hover:text-[#084b25] py-2">
+                      {t("nav.guest.zone")}
                     </Link>
-                    <Link href="/eco-friendly" className="text-gray-700 hover:text-[#7B6B8F] py-2">
-                      {t("eco.friendly.products")}
+                    <Link href="/hotel-components" className="text-gray-700 hover:text-[#084b25] py-2">
+                      {t("nav.hotel.components")}
+                    </Link>
+                    <Link href="/cleaning-equipment" className="text-gray-700 hover:text-[#084b25] py-2">
+                      {t("nav.cleaning.equipment")}
                     </Link>
 
                     {/* Mobile-only links */}
@@ -253,7 +291,7 @@ export function Header({ showMainNavigation = true }: HeaderProps) {
                       <Link href="/factory" className="text-gray-700 hover:text-[#7B6B8F] py-2 block">
                         {t("factory")}
                       </Link>
-                      <Link href="/bathroom" className="text-gray-700 hover:text-[#7B6B8F] py-2 block">
+                      <Link href="/new" className="text-gray-700 hover:text-[#7B6B8F] py-2 block">
                         {t("products")}
                       </Link>
                       <Link href="/for-partners" className="text-gray-700 hover:text-[#7B6B8F] py-2 block">

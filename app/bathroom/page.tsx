@@ -48,17 +48,17 @@ export default function BathroomPage() {
 
       <main className="container mx-auto px-4 py-6 md:py-8">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-          <div className="lg:w-64 xl:w-72">
+          {/* <div className="lg:w-64 xl:w-72">
             <SidebarFilters />
-          </div>
+          </div> */}
 
           <div className="flex-1">
-            <PageHeader 
+            <PageHeader
               titleKey="bathroom.title"
               descriptionKey="bathroom.description"
             />
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-6">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4 md:gap-6">
               {products.map((product) => (
                 <ProductCard
                   key={product.id}

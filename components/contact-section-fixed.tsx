@@ -49,13 +49,13 @@ export function ContactSection() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-4 inline-block rounded-full bg-[#f5e6d3] px-4 py-1.5 text-sm font-medium text-[#084b25]">
-              {t("contact")}
+              {t("contactPage.badge")}
             </div>
             <h1 className="mb-6 text-balance font-serif text-4xl font-bold text-gray-900 lg:text-5xl">
-              {t("contact.title")}
+              {t("contactPage.title")}
             </h1>
             <p className="text-pretty text-lg text-gray-600">
-              {t("contact.subtitle")}
+              {t("contactPage.subtitle")}
             </p>
           </div>
         </div>
@@ -66,10 +66,10 @@ export function ContactSection() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-3 font-serif text-3xl font-bold text-gray-900">
-              {t("contact.ways.title")}
+              {t("contactPage.multipleWays.title")}
             </h2>
             <p className="text-gray-600">
-              {t("contact.ways.subtitle")}
+              {t("contactPage.multipleWays.subtitle")}
             </p>
           </div>
 
@@ -85,16 +85,16 @@ export function ContactSection() {
                 </div>
               </div>
               <h3 className="mb-3 font-serif text-xl font-semibold text-gray-900">
-                {t("contact.phone.title")}
+                {t("contactPage.multipleWays.phone.title")}
               </h3>
               <p className="mb-4 text-sm text-gray-600">
-                {t("contact.phone.description")}
+                {t("contactPage.multipleWays.phone.description")}
               </p>
               <a
                 href="tel:+998221234567"
                 className="mb-2 block font-semibold text-[#084b25] hover:underline"
               >
-                +998 22 123 4567
+                +998 (91) 888-80-80
               </a>
               <p className="text-xs text-gray-500">24/7 Support Available</p>
             </Card>
@@ -107,10 +107,10 @@ export function ContactSection() {
                 </div>
               </div>
               <h3 className="mb-3 font-serif text-xl font-semibold text-gray-900">
-                {t("contact.email.title")}
+                {t("contactPage.multipleWays.email.title")}
               </h3>
               <p className="mb-4 text-sm text-gray-600">
-                {t("contact.email.description")}
+                {t("contactPage.multipleWays.email.description")}
               </p>
               <a
                 href="mailto:info@safihotelcollection.com"
@@ -131,10 +131,10 @@ export function ContactSection() {
             {/* Contact Form */}
             <div>
               <h2 className="mb-3 font-serif text-3xl font-bold text-gray-900">
-                {t("contact.form.title")}
+                {t("contactPage.form.title")}
               </h2>
               <p className="mb-8 text-gray-600">
-                {t("contact.form.subtitle")}
+                {t("contactPage.form.subtitle")}
               </p>
 
               {submitted ? (
@@ -145,16 +145,16 @@ export function ContactSection() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="mb-2 text-xl font-semibold text-gray-900">{t("contact.form.thankYou")}</h3>
-                    <p className="text-gray-600">{t("contact.form.response")}</p>
+                    <h3 className="mb-2 text-xl font-semibold text-gray-900">{t("confirmation.thankYou")}</h3>
+                    <p className="text-gray-600">{t("contactPage.multipleWays.email.response")}</p>
                   </div>
                 </Card>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid gap-6 md:grid-cols-2">
+                  <div className="grid gap-6 md:grid-cols-1">
                     <div>
                       <Label htmlFor="firstName" className="text-gray-900">
-                        {t("contact.form.firstName")} *
+                        {t("contactPage.form.firstName")} *
                       </Label>
                       <Input
                         id="firstName"
@@ -164,38 +164,14 @@ export function ContactSection() {
                         className="mt-2"
                       />
                     </div>
-                    <div>
-                      <Label htmlFor="lastName" className="text-gray-900">
-                        {t("contact.form.lastName")} *
-                      </Label>
-                      <Input
-                        id="lastName"
-                        value={formData.lastName}
-                        onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                        required
-                        className="mt-2"
-                      />
-                    </div>
+                    
                   </div>
 
-                  <div>
-                    <Label htmlFor="email" className="text-gray-900">
-                      {t("contact.form.email")} *
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="john@hotel.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                      className="mt-2"
-                    />
-                  </div>
+                 
 
                   <div>
                     <Label htmlFor="hotelCompany" className="text-gray-900">
-                      {t("contact.form.company")} *
+                      {t("contactPage.form.hotelCompany")} *
                     </Label>
                     <Input
                       id="hotelCompany"
@@ -209,7 +185,7 @@ export function ContactSection() {
 
                   <div>
                     <Label htmlFor="phone" className="text-gray-900">
-                      {t("contact.form.phone")} *
+                      {t("contactPage.form.phone")} *
                     </Label>
                     <Input
                       id="phone"
@@ -224,11 +200,11 @@ export function ContactSection() {
 
                   <div>
                     <Label htmlFor="message" className="text-gray-900">
-                      {t("contact.form.message")} *
+                      {t("contactPage.form.help")} *
                     </Label>
                     <Textarea
                       id="message"
-                      placeholder={t("contact.form.messagePlaceholder")}
+                      placeholder={t("contactPage.form.helpPlaceholder")}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
@@ -244,12 +220,12 @@ export function ContactSection() {
                       onCheckedChange={(checked) => setFormData({ ...formData, consent: checked as boolean })}
                     />
                     <Label htmlFor="consent" className="text-sm leading-relaxed text-gray-600">
-                      {t("contact.form.consent")}
+                      {t("contactPage.form.consent")}
                     </Label>
                   </div>
 
                   <Button type="submit" size="lg" className="w-full bg-[#084b25] text-white hover:bg-[#084b25]/90">
-                    {t("contact.form.submit")}
+                    {t("contactPage.form.submit")}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </form>
@@ -268,7 +244,7 @@ export function ContactSection() {
       <section className="border-y bg-gray-50 py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <h2 className="mb-12 text-center font-serif text-3xl font-bold text-gray-900">
-            {t("contact.offer.title")}
+            {t("contactPage.offer.title")}
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
             <div className="flex items-start gap-4">
@@ -276,9 +252,9 @@ export function ContactSection() {
                 <Lightbulb className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="mb-2 font-semibold text-gray-900">{t("contact.offer.consultation")}</h3>
+                <h3 className="mb-2 font-semibold text-gray-900">{t("contactPage.offer.consultation.title")}</h3>
                 <p className="text-sm text-gray-600">
-                  {t("contact.offer.consultationDesc")}
+                  {t("contactPage.offer.consultation.description")}
                 </p>
               </div>
             </div>
@@ -287,9 +263,9 @@ export function ContactSection() {
                 <Truck className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="mb-2 font-semibold text-gray-900">{t("contact.offer.delivery")}</h3>
+                <h3 className="mb-2 font-semibold text-gray-900">{t("contactPage.offer.delivery.title")}</h3>
                 <p className="text-sm text-gray-600">
-                  {t("contact.offer.deliveryDesc")}
+                  {t("contactPage.offer.delivery.description")}
                 </p>
               </div>
             </div>
@@ -298,9 +274,9 @@ export function ContactSection() {
                 <Award className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="mb-2 font-semibold text-gray-900">{t("contact.offer.quality")}</h3>
+                <h3 className="mb-2 font-semibold text-gray-900">{t("contactPage.offer.quality.title")}</h3>
                 <p className="text-sm text-gray-600">
-                  {t("contact.offer.qualityDesc")}
+                  {t("contactPage.offer.quality.description")}
                 </p>
               </div>
             </div>
@@ -311,16 +287,16 @@ export function ContactSection() {
       {/* Have Questions */}
       <section className="py-16">
         <div className="container mx-auto px-4 text-center lg:px-8">
-          <h2 className="mb-3 font-serif text-3xl font-bold text-gray-900">{t("contact.faq.title")}</h2>
+          <h2 className="mb-3 font-serif text-3xl font-bold text-gray-900">{t("contactPage.faq.title")}</h2>
           <p className="mb-8 text-gray-600">
-            {t("contact.faq.subtitle")}
+            {t("contactPage.faq.subtitle")}
           </p>
           <Button
             variant="outline"
             size="lg"
             className="border-[#084b25] text-[#084b25] hover:bg-[#084b25]/10 bg-transparent"
           >
-            {t("contact.faq.button")}
+            {t("contactPage.faq.button")}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>

@@ -47,23 +47,23 @@ export default function ForPartnersPage() {
       <section className="bg-gradient-to-r from-[#084b25] to-[#0a5c2e] text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-            Hamkorlik uchun
+            {t("partners.hero.title")}
           </h1>
           <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-white/90 leading-relaxed">
-            Mehmonxonangiz uchun premium sifatli mahsulotlar va professional xizmatlar
+            {t("partners.hero.subtitle")}
           </p>
           <div className="flex flex-wrap justify-center gap-8 text-base">
             <div className="flex items-center gap-3 bg-white/10 px-4 py-2 rounded-full">
               <Star className="h-6 w-6 text-yellow-300" />
-              <span className="text-white font-medium">Premium sifat</span>
+              <span className="text-white font-medium">{t("partners.premium.quality")}</span>
             </div>
             <div className="flex items-center gap-3 bg-white/10 px-4 py-2 rounded-full">
               <Globe className="h-6 w-6 text-blue-300" />
-              <span className="text-white font-medium">Xalqaro standartlar</span>
+              <span className="text-white font-medium">{t("partners.international.standards")}</span>
             </div>
             <div className="flex items-center gap-3 bg-white/10 px-4 py-2 rounded-full">
               <Handshake className="h-6 w-6 text-green-300" />
-              <span className="text-white font-medium">Ishonchli hamkorlik</span>
+              <span className="text-white font-medium">{t("partners.reliable.partnership")}</span>
             </div>
           </div>
         </div>
@@ -77,18 +77,18 @@ export default function ForPartnersPage() {
               <CardHeader>
                 <CardTitle className="text-3xl text-[#084b25] flex items-center gap-3 font-bold">
                   <Building2 className="h-7 w-7" />
-                  Hamkor bo'lish uchun anketa
+                  {t("partners.form.title")}
                 </CardTitle>
                 <CardDescription className="text-gray-600 text-base mt-2">
-                  Ma'lumotlaringizni to'ldiring va biz siz bilan bog'lanamiz
+                  {t("partners.form.subtitle")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid md:grid-cols-1 gap-4">
                     <div>
                       <label className="block text-sm font-semibold text-gray-800 mb-2">
-                        Ismingiz *
+                        {t("partners.form.firstName")} *
                       </label>
                       <Input
                         name="firstName"
@@ -98,9 +98,9 @@ export default function ForPartnersPage() {
                         className="border-gray-300 focus:border-[#084b25]"
                       />
                     </div>
-                    <div>
+                    {/* <div>
                       <label className="block text-sm font-semibold text-gray-800 mb-2">
-                        Familiyangiz *
+                        {t("partners.form.lastName")} *
                       </label>
                       <Input
                         name="lastName"
@@ -109,13 +109,13 @@ export default function ForPartnersPage() {
                         required
                         className="border-gray-300 focus:border-[#084b25]"
                       />
-                    </div>
+                    </div> */}
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid md:grid-cols-1 gap-4">
                     <div>
                       <label className="block text-sm font-semibold text-gray-800 mb-2">
-                        Telefon raqami *
+                        {t("partners.form.phone")} *
                       </label>
                       <Input
                         name="phone"
@@ -126,9 +126,9 @@ export default function ForPartnersPage() {
                         className="border-gray-300 focus:border-[#084b25]"
                       />
                     </div>
-                    <div>
+                    {/* <div>
                       <label className="block text-sm font-semibold text-gray-800 mb-2">
-                        Manzilingiz
+                        {t("partners.form.address")}
                       </label>
                       <Input
                         name="address"
@@ -136,13 +136,13 @@ export default function ForPartnersPage() {
                         onChange={handleInputChange}
                         className="border-gray-300 focus:border-[#084b25]"
                       />
-                    </div>
+                    </div> */}
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div>
+                    {/* <div>
                       <label className="block text-sm font-semibold text-gray-800 mb-2">
-                        Kompaniya nomi *
+                        {t("partners.form.companyName")} *
                       </label>
                       <Input
                         name="companyName"
@@ -151,10 +151,10 @@ export default function ForPartnersPage() {
                         required
                         className="border-gray-300 focus:border-[#084b25]"
                       />
-                    </div>
-                    <div>
+                    </div> */}
+                    {/* <div>
                       <label className="block text-sm font-semibold text-gray-800 mb-2">
-                        Mehmonxona turi *
+                        {t("partners.form.hotelType")} *
                       </label>
                       <select
                         name="hotelType"
@@ -163,21 +163,21 @@ export default function ForPartnersPage() {
                         required
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#084b25]"
                       >
-                        <option value="">Tanlang</option>
-                        <option value="1-star">1 yulduzli</option>
-                        <option value="2-star">2 yulduzli</option>
-                        <option value="3-star">3 yulduzli</option>
-                        <option value="4-star">4 yulduzli</option>
-                        <option value="5-star">5 yulduzli</option>
-                        <option value="boutique">Boutique hotel</option>
-                        <option value="resort">Resort</option>
+                        <option value="">{t("partners.form.select")}</option>
+                        <option value="1-star">{t("partners.form.1star")}</option>
+                        <option value="2-star">{t("partners.form.2star")}</option>
+                        <option value="3-star">{t("partners.form.3star")}</option>
+                        <option value="4-star">{t("partners.form.4star")}</option>
+                        <option value="5-star">{t("partners.form.5star")}</option>
+                        <option value="boutique">{t("partners.form.boutique")}</option>
+                        <option value="resort">{t("partners.form.resort")}</option>
                       </select>
-                    </div>
+                    </div> */}
                   </div>
-
+                  {/* 
                   <div>
                     <label className="block text-sm font-semibold text-gray-800 mb-2">
-                      Xonalar soni
+                      {t("partners.form.roomCount")}
                     </label>
                     <Input
                       name="roomCount"
@@ -186,11 +186,11 @@ export default function ForPartnersPage() {
                       onChange={handleInputChange}
                       className="border-gray-300 focus:border-[#084b25]"
                     />
-                  </div>
+                  </div> */}
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-800 mb-2">
-                      Qo'shimcha ma'lumot
+                      {t("partners.form.message")}
                     </label>
                     <textarea
                       name="message"
@@ -198,7 +198,7 @@ export default function ForPartnersPage() {
                       onChange={handleInputChange}
                       rows={4}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#084b25]"
-                      placeholder="Sizning ehtiyojlaringiz haqida batafsil yozing..."
+                      placeholder={t("partners.form.messagePlaceholder")}
                     />
                   </div>
 
@@ -206,7 +206,7 @@ export default function ForPartnersPage() {
                     type="submit"
                     className="w-full bg-[#084b25] hover:bg-[#06391d] text-white py-3 text-lg"
                   >
-                    Anketani yuborish
+                    {t("partners.form.submit")}
                   </Button>
                 </form>
               </CardContent>
@@ -219,7 +219,7 @@ export default function ForPartnersPage() {
               <CardHeader>
                 <CardTitle className="text-3xl text-[#084b25] flex items-center gap-3 font-bold">
                   <Users className="h-7 w-7" />
-                  Bizning afzalliklarimiz
+                  {t("partners.advantages.title")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -228,8 +228,8 @@ export default function ForPartnersPage() {
                     <Star className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 text-base">Premium sifat</h3>
-                    <p className="text-gray-700 text-sm mt-1">Xalqaro standartlarga mos mahsulotlar</p>
+                    <h3 className="font-bold text-gray-900 text-base">{t("partners.advantages.quality")}</h3>
+                    <p className="text-gray-700 text-sm mt-1">{t("partners.advantages.quality.desc")}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -237,8 +237,8 @@ export default function ForPartnersPage() {
                     <Globe className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 text-base">Keng assortiment</h3>
-                    <p className="text-gray-700 text-sm mt-1">Mehmonxona uchun barcha kerakli mahsulotlar</p>
+                    <h3 className="font-bold text-gray-900 text-base">{t("partners.advantages.range")}</h3>
+                    <p className="text-gray-700 text-sm mt-1">{t("partners.advantages.range.desc")}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -246,8 +246,8 @@ export default function ForPartnersPage() {
                     <Handshake className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 text-base">Individual yondashuv</h3>
-                    <p className="text-gray-700 text-sm mt-1">Har bir mijoz uchun maxsus takliflar</p>
+                    <h3 className="font-bold text-gray-900 text-base">{t("partners.advantages.approach")}</h3>
+                    <p className="text-gray-700 text-sm mt-1">{t("partners.advantages.approach.desc")}</p>
                   </div>
                 </div>
               </CardContent>
@@ -256,28 +256,28 @@ export default function ForPartnersPage() {
             <Card className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-3xl text-[#084b25] font-bold">
-                  Bog'lanish ma'lumotlari
+                  {t("partners.contact.title")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-[#084b25]" />
                   <div>
-                    <p className="font-bold text-gray-900">Telefon</p>
-                    <p className="text-gray-700 text-base">+998 (71) 123-45-67</p>
+                    <p className="font-bold text-gray-900">{t("partners.contact.phone")}</p>
+                    <p className="text-gray-700 text-base">+998 (91) 888-80-80</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-[#084b25]" />
                   <div>
-                    <p className="font-bold text-gray-900">Email</p>
+                    <p className="font-bold text-gray-900">{t("partners.contact.email")}</p>
                     <p className="text-gray-700 text-base">partners@safihotelcollection.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-[#084b25]" />
                   <div>
-                    <p className="font-bold text-gray-900">Manzil</p>
+                    <p className="font-bold text-gray-900">{t("partners.contact.address")}</p>
                     <p className="text-gray-700 text-base">Toshkent sh., Chilonzor tumani</p>
                   </div>
                 </div>
@@ -286,9 +286,9 @@ export default function ForPartnersPage() {
 
             <Card className="bg-gradient-to-r from-[#084b25] to-[#0a5c2e] text-white shadow-lg">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">24/7 qo'llab-quvvatlash</h3>
+                <h3 className="text-xl font-bold mb-2">{t("partners.support.title")}</h3>
                 <p className="text-sm opacity-90">
-                  Bizning mutaxassislarimiz har doim sizga yordam berishga tayyor
+                  {t("partners.support.desc")}
                 </p>
               </CardContent>
             </Card>

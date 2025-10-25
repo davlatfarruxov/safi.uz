@@ -27,7 +27,7 @@ export default function Home() {
         <GenevaDispensersSection />
         <StarRatingCards />
         <PremiumAmenitiesSection />
-        <PopularBrands />
+        {/* <PopularBrands /> */}
         <WelcomeSection />
         <DetailedReviews />
       </main>

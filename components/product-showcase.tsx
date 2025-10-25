@@ -126,6 +126,7 @@ export function ProductShowcase({ titleKey, category }: ProductShowcaseProps) {
                 price={product.price}
                 originalPrice={product.priceVat}
                 image={product.image}
+                showPrice={false}
               />
             </div>
           ))}
@@ -145,6 +146,7 @@ export function ProductShowcase({ titleKey, category }: ProductShowcaseProps) {
                 price={product.price}
                 originalPrice={product.priceVat}
                 image={product.image}
+                showPrice={false}
               />
             </div>
           ))}

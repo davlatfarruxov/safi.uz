@@ -8,8 +8,11 @@ import { Calendar, User, ArrowRight, Tag, Clock } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { TopBanner } from "@/components/top-banner"
+import { useLanguage } from "@/lib/language-context"
 
 export default function BlogPage() {
+  const { t } = useLanguage()
+  
   const blogPosts = [
     {
       id: 1,
@@ -79,7 +82,15 @@ export default function BlogPage() {
     }
   ]
 
-  const categories = ["Barchasi", "Tendensiyalar", "Ekologiya", "Mahsulotlar", "Dizayn", "Xizmat", "Tadbirlar"]
+  const categories = [
+    { key: "all", label: t("blog.categories.all") },
+    { key: "trends", label: t("blog.categories.trends") },
+    { key: "ecology", label: t("blog.categories.ecology") },
+    { key: "products", label: t("blog.categories.products") },
+    { key: "design", label: t("blog.categories.design") },
+    { key: "service", label: t("blog.categories.service") },
+    { key: "events", label: t("blog.categories.events") }
+  ]
 
   const featuredPost = blogPosts.find(post => post.featured)
   const regularPosts = blogPosts.filter(post => !post.featured)
@@ -93,10 +104,10 @@ export default function BlogPage() {
       <section className="bg-gradient-to-r from-[#084b25] to-[#0a5c2e] text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Blog
+            {t("blog.title")}
           </h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Mehmonxona sanoati, mahsulotlar va xizmatlar haqida foydali maqolalar
+            {t("blog.subtitle")}
           </p>
         </div>
       </section>
@@ -106,15 +117,15 @@ export default function BlogPage() {
         <div className="flex flex-wrap gap-3 mb-12 justify-center">
           {categories.map((category) => (
             <Button
-              key={category}
+              key={category.key}
               variant="outline"
               className={`${
-                category === "Barchasi" 
+                category.key === "all" 
                   ? "bg-[#084b25] text-white border-[#084b25] hover:bg-[#06391d] hover:border-[#06391d]" 
                   : "border-gray-300 text-gray-700 hover:border-[#084b25] hover:text-[#084b25] hover:bg-[#084b25]/5"
               } px-6 py-2 font-medium transition-all duration-200`}
             >
-              {category}
+              {category.label}
             </Button>
           ))}
         </div>
@@ -122,7 +133,7 @@ export default function BlogPage() {
         {/* Featured Post */}
         {featuredPost && (
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-[#084b25] mb-8">Asosiy maqola</h2>
+            <h2 className="text-3xl font-bold text-[#084b25] mb-8">{t("blog.featured.title")}</h2>
             <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-0">
               <div className="md:flex">
                 <div className="md:w-1/2">
@@ -135,7 +146,7 @@ export default function BlogPage() {
                     />
                     <div className="absolute top-6 left-6">
                       <span className="bg-[#084b25] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                        ⭐ Asosiy
+                        {t("blog.featured.badge")}
                       </span>
                     </div>
                   </div>
@@ -152,7 +163,7 @@ export default function BlogPage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Clock className="h-4 w-4 text-[#084b25]" />
-                      <span>{featuredPost.readTime}</span>
+                      <span>{featuredPost.readTime.replace('daqiqa', t("blog.read.time"))}</span>
                     </div>
                   </div>
                   <h3 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">
@@ -169,7 +180,7 @@ export default function BlogPage() {
                       <span className="text-sm font-medium text-gray-700">{featuredPost.author}</span>
                     </div>
                     <Button className="bg-[#084b25] hover:bg-[#06391d] text-white px-6 py-3 font-semibold">
-                      O'qish <ArrowRight className="ml-2 h-5 w-5" />
+                      {t("blog.read")} <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </div>
                 </div>
@@ -180,7 +191,7 @@ export default function BlogPage() {
 
         {/* Regular Posts Grid */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-[#084b25] mb-8">Barcha maqolalar</h2>
+          <h2 className="text-3xl font-bold text-[#084b25] mb-8">{t("blog.all.articles")}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regularPosts.map((post) => (
               <Card key={post.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border-0 bg-white">
@@ -206,7 +217,7 @@ export default function BlogPage() {
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock className="h-4 w-4 text-[#084b25]" />
-                      <span className="font-medium">{post.readTime}</span>
+                      <span className="font-medium">{post.readTime.replace('daqiqa', t("blog.read.time"))}</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 leading-tight">
@@ -223,7 +234,7 @@ export default function BlogPage() {
                       <span className="text-xs text-gray-600 font-medium">{post.author}</span>
                     </div>
                     <Button variant="ghost" size="sm" className="text-[#084b25] hover:text-white hover:bg-[#084b25] px-3 py-1 font-medium">
-                      O'qish <ArrowRight className="ml-1 h-4 w-4" />
+                      {t("blog.read")} <ArrowRight className="ml-1 h-4 w-4" />
                     </Button>
                   </div>
                 </CardContent>
@@ -235,7 +246,7 @@ export default function BlogPage() {
         {/* Load More Button */}
         <div className="text-center mb-16">
           <Button variant="outline" className="border-2 border-[#084b25] text-[#084b25] hover:bg-[#084b25] hover:text-white px-8 py-3 font-semibold transition-all duration-300">
-            Ko'proq yuklash
+            {t("blog.load.more")}
           </Button>
         </div>
 
@@ -243,18 +254,18 @@ export default function BlogPage() {
         <div className="mt-16">
           <Card className="bg-gradient-to-r from-[#084b25] to-[#0a5c2e] text-white border-0 shadow-2xl">
             <CardContent className="p-10 text-center">
-              <h3 className="text-3xl font-bold mb-4">Yangiliklar uchun obuna bo'ling</h3>
+              <h3 className="text-3xl font-bold mb-4">{t("blog.newsletter.title")}</h3>
               <p className="mb-8 opacity-90 text-lg max-w-2xl mx-auto">
-                Mehmonxona sanoati bo'yicha eng so'nggi yangiliklar va maslahatlarni birinchi bo'lib oling
+                {t("blog.newsletter.subtitle")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
                 <input
                   type="email"
-                  placeholder="Email manzilingiz"
+                  placeholder={t("blog.newsletter.placeholder")}
                   className="flex-1 px-6 py-4 rounded-lg text-gray-800 bg-white placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-white/30 border-0 text-base shadow-sm"
                 />
                 <Button className="bg-white text-[#084b25] hover:bg-gray-50 hover:text-[#06391d] px-8 py-4 font-semibold text-base rounded-lg shadow-sm transition-all duration-300">
-                  Obuna bo'lish
+                  {t("blog.newsletter.subscribe")}
                 </Button>
               </div>
             </CardContent>

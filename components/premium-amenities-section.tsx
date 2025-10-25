@@ -91,28 +91,10 @@ export function PremiumAmenitiesSection() {
                     </h3>
                     
                     {/* Rating */}
-                    {product.rating && (
-                      <div className="flex items-center gap-1 mb-1">
-                        <div className="flex items-center">
-                          {[...Array(5)].map((_, i) => (
-                            <span
-                              key={i}
-                              className={`text-xs ${
-                                i < Math.floor(product.rating)
-                                  ? "text-yellow-400"
-                                  : "text-gray-300"
-                              }`}
-                            >
-                              ★
-                            </span>
-                          ))}
-                        </div>
-                        <span className="text-xs text-gray-500">({product.reviews})</span>
-                      </div>
-                    )}
+                    {/*  */}
                     
                     {/* Price - Compact */}
-                    <div className="mb-2">
+                    {/* <div className="mb-2">
                       <div className="text-sm font-bold text-gray-900">
                         ${product.price.toFixed(2)}
                       </div>
@@ -120,8 +102,7 @@ export function PremiumAmenitiesSection() {
                         ${product.originalPrice.toFixed(2)} Inc. VAT
                       </div>
                     </div>
-                    
-                    {/* Buttons - Compact */}
+                     */}
                     <div className="flex flex-col gap-1 w-full mt-auto">
                       <Button className="bg-[#084b25] hover:bg-[#06391d] text-white text-xs py-1.5 w-full">
                         <span className="mr-1">🛒</span>

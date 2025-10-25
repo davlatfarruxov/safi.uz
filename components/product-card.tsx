@@ -20,6 +20,7 @@ interface ProductCardProps {
   isNew?: boolean
   rating?: number
   reviews?: number
+  showPrice?: boolean
 }
 
 export function ProductCard({ 
@@ -33,10 +34,11 @@ export function ProductCard({
   badge, 
   isNew, 
   rating, 
-  reviews 
+  reviews,
+  showPrice = true
 }: ProductCardProps) {
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist()
-  const { language } = useLanguage()
+  const { language, t } = useLanguage()
 
   const productId = String(id) || name.toLowerCase().replace(/\s+/g, "-")
   const isLiked = isInWishlist(productId)
@@ -109,26 +111,29 @@ export function ProductCard({
           </div>
         )}
 
-        <div className="mb-3 md:mb-4">
-          <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
-            <span className="text-base md:text-lg font-semibold text-gray-900">${price?.toFixed(2) ?? "0.00"}</span>
-            {originalPrice && (
-              <span className="text-xs md:text-sm text-gray-500 line-through">${originalPrice.toFixed(2)} Inc. VAT</span>
-            )}
+        {/* Price section */}
+        {showPrice && (
+          <div className="mb-3 md:mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
+              <span className="text-base md:text-lg font-semibold text-gray-900">${price?.toFixed(2) ?? "0.00"}</span>
+              {originalPrice && (
+                <span className="text-xs md:text-sm text-gray-500 line-through">${originalPrice.toFixed(2)} Inc. VAT</span>
+              )}
+            </div>
           </div>
-        </div>
+        )}
 
         <Button className="w-full bg-[#084b25] hover:bg-[#06391d] text-white font-medium mb-2 md:mb-3 text-xs md:text-sm py-2 md:py-2.5" size="sm">
           <ShoppingBag className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />
-          Add to Basket
+          {t("add.to.basket")}
         </Button>
-{/* 
+
         <div className="flex items-center gap-2">
           <Checkbox id={`compare-${productId}`} className="border-gray-300 h-3 w-3 md:h-4 md:w-4" />
           <Label htmlFor={`compare-${productId}`} className="text-xs md:text-sm text-gray-600 cursor-pointer font-normal">
-            Add to compare
+            {t("add.to.compare")}
           </Label>
-        </div> */}
+        </div>
       </div>
     </div>
   )

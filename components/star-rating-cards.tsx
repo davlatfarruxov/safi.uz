@@ -11,30 +11,18 @@ export function StarRatingCards() {
 
   const starCategories = [
     {
-      stars: 1,
-      title: t("star.rating.budget.title"),
-      description: t("star.rating.budget.description"),
+      stars: 0,
+      title: t("star.rating.xorika.title"),
+      description: t("star.rating.xorika.description"),
       features: [
-        t("star.rating.budget.feature1"),
-        t("star.rating.budget.feature2"),
-        t("star.rating.budget.feature3")
+        t("star.rating.xorika.feature1"),
+        t("star.rating.xorika.feature2"),
+        t("star.rating.xorika.feature3")
       ],
-      bgColor: "bg-slate-50",
-      borderColor: "border-slate-200",
-      accentColor: "text-slate-600",
-    },
-    {
-      stars: 2,
-      title: t("star.rating.economy.title"),
-      description: t("star.rating.economy.description"),
-      features: [
-        t("star.rating.economy.feature1"),
-        t("star.rating.economy.feature2"),
-        t("star.rating.economy.feature3")
-      ],
-      bgColor: "bg-emerald-50",
-      borderColor: "border-emerald-200",
-      accentColor: "text-emerald-700",
+      bgColor: "bg-teal-50",
+      borderColor: "border-teal-200",
+      accentColor: "text-teal-700",
+      isSpecial: true,
     },
     {
       stars: 3,
@@ -77,9 +65,14 @@ export function StarRatingCards() {
     },
   ]
 
-  const handleSelectRating = (stars: number) => {
-    // Navigate to products page with star filter
-    router.push(`/products?stars=${stars}`)
+  const handleSelectRating = (category: any) => {
+    if (category.isSpecial) {
+      // Navigate to xorika page
+      router.push(`/xorika`)
+    } else {
+      // Navigate to products page with star filter
+      router.push(`/products?stars=${category.stars}`)
+    }
   }
 
   return (
@@ -94,22 +87,26 @@ export function StarRatingCards() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {starCategories.map((category) => (
             <div
               key={category.stars}
               className={`flex flex-col rounded-xl border-2 ${category.borderColor} ${category.bgColor} p-6 transition-all hover:scale-105 hover:shadow-xl hover:border-[#084b25] relative overflow-hidden`}
             >
-              {/* Stars */}
+              {/* Stars or Special Icon */}
               <div className="mb-4 flex justify-center gap-1">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star
-                    key={star}
-                    className={`h-6 w-6 ${
-                      star <= category.stars ? "fill-amber-400 text-amber-400 drop-shadow-sm" : "fill-gray-200 text-gray-200"
-                    }`}
-                  />
-                ))}
+                {category.isSpecial ? (
+                  <div className="text-3xl font-bold text-teal-600">🏢</div>
+                ) : (
+                  [1, 2, 3, 4, 5].map((star) => (
+                    <Star
+                      key={star}
+                      className={`h-6 w-6 ${
+                        star <= category.stars ? "fill-amber-400 text-amber-400 drop-shadow-sm" : "fill-gray-200 text-gray-200"
+                      }`}
+                    />
+                  ))
+                )}
               </div>
 
               {/* Title */}
@@ -130,7 +127,7 @@ export function StarRatingCards() {
 
               {/* Button */}
               <Button
-                onClick={() => handleSelectRating(category.stars)}
+                onClick={() => handleSelectRating(category)}
                 variant="outline"
                 className={`w-full border-2 ${category.borderColor} ${category.accentColor} hover:bg-[#084b25] hover:text-white hover:border-[#084b25] transition-all duration-300 font-semibold`}
               >

@@ -4,10 +4,13 @@ import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
+import { NewProductsModal } from "./new-products-modal"
 
 export function MainContent() {
   const { t } = useLanguage()
   const [isVisible, setIsVisible] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -50,8 +53,11 @@ export function MainContent() {
                 <p className="text-white text-sm md:text-base lg:text-lg mb-4 md:mb-6 leading-relaxed">
                   {t("luxuriousGuestAmenities")}
                 </p>
-                <Button className="bg-[#084b25] hover:bg-[#06391d] text-white px-6 md:px-8 py-2 md:py-3 text-sm md:text-base font-medium">
-                  {t("shopBedding")}
+                <Button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="bg-[#084b25] hover:bg-[#06391d] text-white px-6 md:px-8 py-2 md:py-3 text-sm md:text-base font-medium"
+                >
+                  {t("new.button")}
                 </Button>
               </div>
             </div>
@@ -60,7 +66,7 @@ export function MainContent() {
           {/* Right side - Mini Fridges, Luxury Accessories, and Login */}
           <div className="flex flex-col gap-4 md:gap-6">
             {/* Bottom row - Luxury Accessories and Login */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-4 md:gap-6">
               {/* Luxury Accessories section */}
               <div className="relative h-[180px] md:h-[250px] rounded-lg overflow-hidden">
                 <Image
@@ -74,16 +80,18 @@ export function MainContent() {
                 />
                 <div className="absolute inset-0  bg-opacity-30 flex flex-col items-center justify-center p-4">
                   <h2 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 text-center">
-                    {t("luxuryAccessories")}
+                    {t("nav.eco.concept")}
                   </h2>
-                  <Button className="bg-[#084b25] hover:bg-[#06391d] text-white px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium">
-                    {t("shopRoomAccessories")}
-                  </Button>
+                  <Link href="/hotel-components">
+                    <Button className="bg-[#084b25] hover:bg-[#06391d] text-white px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium">
+                      {t("view")}
+                    </Button>
+                  </Link>
                 </div>
               </div>
 
               {/* Login or Register section */}
-              <div className="bg-gradient-to-br from-[#084b25] to-[#06391d] rounded-lg flex flex-col justify-center h-[200px] md:h-[250px] p-4 shadow-lg border-2 border-[#084b25]">
+              {/* <div className="bg-gradient-to-br from-[#084b25] to-[#06391d] rounded-lg flex flex-col justify-center h-[200px] md:h-[250px] p-4 shadow-lg border-2 border-[#084b25]">
                 <h2 className="text-lg md:text-xl font-bold text-white mb-2 text-center">
                   {t("loginOrRegister")}
                 </h2>
@@ -98,7 +106,7 @@ export function MainContent() {
                     {t("newHereRegister")}
                   </Button>
                 </div>
-              </div>
+              </div> */}
             </div>
             {/* Mini Fridges section */}
             <div className="relative h-[180px] md:h-[250px] rounded-lg overflow-hidden">
@@ -113,17 +121,25 @@ export function MainContent() {
               />
               <div className="absolute inset-0  bg-opacity-30 flex flex-col items-center justify-center p-4 md:p-6">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4 text-center">
-                  {t("miniFridges")}
+                  {t("nav.bedroom.zone")}
                 </h2>
-                <Button className="bg-[#084b25] hover:bg-[#06391d] text-white px-4 md:px-6 py-2 text-xs md:text-sm font-medium">
-                  {t("shopMinibars")}
-                </Button>
+                <Link href="/guest-zone">
+                  <Button className="bg-[#084b25] hover:bg-[#06391d] text-white px-4 md:px-6 py-2 text-xs md:text-sm font-medium">
+                    {t("view")}
+                  </Button>
+                </Link>
               </div>
             </div>
 
           </div>
         </div>
       </div>
+
+      {/* New Products Modal */}
+      <NewProductsModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   )
 }
