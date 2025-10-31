@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "hotel supplies, B2B hospitality, premium hotel furniture, hotel textiles, hospitalitsted by 10,000+ hotels worldwide. Premium quality, expert consulting, express delivery.",
   generator: "v0.app",
   icons: {
-    icon: "safi-logo.png", // yoki .svg ham bo‘ladi
+    icon: "favicon.png", // yoki .svg ham bo‘ladi
   },
 }
 
