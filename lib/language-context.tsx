@@ -250,8 +250,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Welcome Section
     "welcome.title": "Добро пожаловать в Safi Hotel Collection",
-    "welcome.description.1": "Safi Hotel Collection - это семейный бизнес с страстью к предоставлению высококачественных принадлежностей для гостиничных номеров. Имея более 25 лет специализированного опыта, мы гордимся тем, что являемся одним из ведущих поставщиков гостиничных принадлежностей в Узбекистане.",
-    "welcome.description.2": "Независимо от того, являетесь ли вы престижным отелем в центре Ташкента, интимным бутик-отелем или независимым гостевым домом, мы здесь, чтобы поддержать вас на каждом этапе пути.",
+    "welcome.description.1": "Safi Hotel Collection — это сервисная сеть, выводящая туризм Узбекистана на новый уровень. Основана в 2025 году. Мы работаем в гостиницах с устойчивым качеством и надёжным обслуживанием.",
+    "welcome.description.2": "Наша цель — предоставлять комфортные, современные и профессиональные услуги по всему Узбекистану. Обеспечение спокойствия, чистоты и удобства для каждого гостя — наш главный приоритет. Safi — новый этап туризма Узбекистана и стандарт безупречного сервиса.",
     "welcome.signature": "Команда Safi",
     "discover.our.story": "Узнать нашу историю",
 
@@ -482,7 +482,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.services.amenities.desc": "Полные пакеты удобств для исключительного гостевого опыта",
     
     "about.mission.title": "Наша миссия",
-    "about.mission.text": "Мы способствуем успеху предприятий гостиничной и туристической индустрии, предоставляя высококачественные продукты и профессиональные услуги. Наша цель - помочь создать незабываемый и комфортный опыт проживания для гостей каждого клиента.",
+    "about.mission.text": "Safi Hotel Collection — это сервисная сеть, выводящая туризм Узбекистана на новый уровень. Основана в 2025 году. Мы работаем в гостиницах с устойчивым качеством и надёжным обслуживанием. Наша цель — предоставлять комфортные, современные и профессиональные услуги по всему Узбекистану. Обеспечение спокойствия, чистоты и удобства для каждого гостя — наш главный приоритет. Safi — новый этап туризма Узбекистана и стандарт безупречного сервиса.",
     
     "about.values.quality": "Гарантия высокого качества",
     "about.values.service": "Профессиональное обслуживание",
@@ -696,8 +696,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Welcome Section
     "welcome.title": "Safi Hotel Collection ga xush kelibsiz",
-    "welcome.description.1": "Safi Hotel Collection - bu mehmonxona xonalari uchun yuqori sifatli jihozlar taqdim etishga ishtiyoqli oilaviy biznes. 25 yildan ortiq ixtisoslashgan tajribaga ega bo'lib, biz O'zbekistonning yetakchi mehmonxona jihozlari yetkazib beruvchilaridan biri ekanligimizdan faxrlanamiz.",
-    "welcome.description.2": "Siz Toshkent markazidagi nufuzli mehmonxona, samimiy butik mehmonxona yoki mustaqil mehmon uyi bo'lasizmi, biz yo'lning har bir bosqichida sizni qo'llab-quvvatlash uchun shu yerdamiz.",
+    "welcome.description.1": "Safi Hotel Collection — O'zbekiston turizmini yangi bosqichga olib chiquvchi xizmat tarmog'i. 2025-yilda tashkil etilgan. Biz barqaror sifat va ishonchli xizmat ko'rsatuvchi mehmonxonalarda ishlaymiz.",
+    "welcome.description.2": "Bizning maqsadimiz — butun O'zbekiston bo'ylab qulay, zamonaviy va professional xizmatlar taqdim etish. Har bir mehmon uchun tinchlik, tozalik va qulaylikni ta'minlash — bizning asosiy ustuvorligimiz. Safi — O'zbekiston turizmining yangi bosqichi va mukammal xizmat standartlari.",
     "welcome.signature": "Safi jamoasi",
     "discover.our.story": "Bizning hikoyamizni bilib oling",
 
@@ -928,7 +928,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.services.amenities.desc": "Ajoyib mehmon tajribasi uchun to'liq qulaylik paketlari",
     
     "about.mission.title": "Bizning missiyamiz",
-    "about.mission.text": "Biz mehmonxona va turizm sohasida faoliyat yurituvchi korxonalarga eng yuqori sifatli mahsulotlar va professional xizmatlar taqdim etish orqali ularning muvaffaqiyatiga hissa qo'shamiz. Bizning maqsadimiz - har bir mijozning mehmonlariga unutilmas va qulay yashash tajribasini yaratishda yordam berish.",
+    "about.mission.text": "Safi Hotel Collection — O'zbekiston turizmini yangi bosqichga olib chiquvchi xizmat tarmog'i. 2025-yilda tashkil etilgan. Biz barqaror sifat va ishonchli xizmat ko'rsatuvchi mehmonxonalarda ishlaymiz. Bizning maqsadimiz — butun O'zbekiston bo'ylab qulay, zamonaviy va professional xizmatlar taqdim etish. Har bir mehmon uchun tinchlik, tozalik va qulaylikni ta'minlash — bizning asosiy ustuvorligimiz. Safi — O'zbekiston turizmining yangi bosqichi va mukammal xizmat standartlari.",
     
     "about.values.quality": "Yuqori sifat kafolati",
     "about.values.service": "Professional xizmat",
@@ -1142,8 +1142,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Welcome Section
     "welcome.title": "Welcome to Safi Hotel Collection",
-    "welcome.description.1": "Safi Hotel Collection is a family-run business with a passion for providing top-quality hotel room supplies. With over 25 years of dedicated expertise, we take pride in being one of Uzbekistan's foremost hospitality suppliers.",
-    "welcome.description.2": "Whether you're a prestigious hotel in central Tashkent, an intimate boutique retreat or an independent guest house, we're here to support you every step of the way.",
+    "welcome.description.1": "Safi Hotel Collection is a service network that takes Uzbekistan's tourism to a new level. Founded in 2025. We work in hotels with sustainable quality and reliable service.",
+    "welcome.description.2": "Our goal is to provide comfortable, modern and professional services throughout Uzbekistan. Ensuring peace, cleanliness and comfort for every guest is our main priority. Safi is a new stage of Uzbekistan's tourism and the standard of impeccable service.",
     "welcome.signature": "The Safi Team",
     "discover.our.story": "Discover Our Story",
 
@@ -1374,7 +1374,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.services.amenities.desc": "Complete amenity packages for exceptional guest experience",
     
     "about.mission.title": "Our Mission",
-    "about.mission.text": "We contribute to the success of hospitality and tourism businesses by providing the highest quality products and professional services. Our goal is to help create unforgettable and comfortable living experiences for each client's guests.",
+    "about.mission.text": "Safi Hotel Collection is a service network that takes Uzbekistan's tourism to a new level. Founded in 2025. We work in hotels with sustainable quality and reliable service. Our goal is to provide comfortable, modern and professional services throughout Uzbekistan. Ensuring peace, cleanliness and comfort for every guest is our main priority. Safi is a new stage of Uzbekistan's tourism and the standard of impeccable service.",
     
     "about.values.quality": "High Quality Guarantee",
     "about.values.service": "Professional Service",
