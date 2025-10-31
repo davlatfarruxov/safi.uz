@@ -49,7 +49,7 @@ export function useLanguage() {
 const translations: Record<Language, Record<string, string>> = {
   ru: {
     // Top Banner
-    "free.delivery": "Бесплатная доставка по материковой части Ташкент при заказе от $150 (без НДС)",
+    "free.delivery": "Бесплатная доставка по городу Ташкент",
 
     // Header
     hello: "Привет",
@@ -495,7 +495,7 @@ const translations: Record<Language, Record<string, string>> = {
   },
   uz: {
     // Top Banner
-    "free.delivery": "Buyurtma $150 dan yuqori bo'lsa, Toshkent shahri bo'ylab bepul yetkazib berish",
+    "free.delivery": "Toshkent shahri bo'ylab yetkazib berish bepul",
 
     // Header
     hello: "Salom",
@@ -941,7 +941,7 @@ const translations: Record<Language, Record<string, string>> = {
   },
   en: {
     // Top Banner
-    "free.delivery": "Free delivery on UK mainland orders over £250 (excl. VAT)",
+    "free.delivery": "Free delivery throughout Tashkent city",
 
     // Header
     hello: "Hello",
