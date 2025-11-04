@@ -4,9 +4,11 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import { Toaster } from "react-hot-toast"
 import "./globals.css"
 import { LanguageProvider } from "@/lib/language-context"
 import { WishlistProvider } from "@/lib/wishlist-context"
+import { CartProvider } from "@/lib/cart-context"
 
 
 
@@ -32,7 +34,10 @@ export default function RootLayout({
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <LanguageProvider>
           <WishlistProvider>
-            <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+            <CartProvider>
+              <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+              <Toaster position="top-right" />
+            </CartProvider>
           </WishlistProvider>
         </LanguageProvider>
         <Analytics />

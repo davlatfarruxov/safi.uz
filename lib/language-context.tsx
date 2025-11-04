@@ -76,6 +76,10 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.guest.zone": "Гостевая зона",
     "nav.hotel.components": "Комплектующие отеля",
     "nav.cleaning.equipment": "Проф оборудования для уборки",
+    "virtual.tour.subtitle": "Виртуальный тур по отелю",
+    "eco.concept": "ЭКО-концепция",
+    "view.products": "Посмотреть",
+    "open.tour": "Открыть тур",
 
     // Old navigation (keeping for compatibility)
     bathroom: "Ванная",
@@ -184,6 +188,42 @@ const translations: Record<Language, Record<string, string>> = {
     "sustainable.dispensing": "Устойчивые решения для дозирования",
     "add.to.basket": "Добавить в корзину",
     "add.to.compare": "Добавить к сравнению",
+    
+    // Cart Page
+    "cart.empty": "Корзина пуста",
+    "cart.empty.desc": "Пока в вашей корзине нет товаров",
+    "cart.start.shopping": "Начать покупки",
+    "cart.title": "Корзина",
+    "cart.products": "товаров",
+    "cart.order.info": "Информация о заказе",
+    "cart.total.products": "Всего товаров:",
+    "cart.place.order": "Оформить заказ",
+    "cart.continue.shopping": "Продолжить покупки",
+    
+    // Toast Messages
+    "toast.added.to.cart": "добавлен в корзину!",
+    "toast.products.added": "товаров добавлено в корзину!",
+    "toast.enter.phone": "Введите номер телефона!",
+    "toast.no.orders": "Заказы не найдены",
+    "toast.error.loading": "Ошибка при загрузке заказов",
+    "toast.cart.empty": "Корзина пуста!",
+    "toast.order.success": "Заказ успешно отправлен!",
+    "toast.order.error": "Ошибка при отправке заказа",
+    
+    // Checkout Page
+    "checkout.title": "Оформление заказа",
+    "checkout.your.order": "Ваш заказ",
+    "checkout.products": "товаров",
+    "checkout.contact.info": "Контактная информация",
+    "checkout.phone": "Номер телефона",
+    "checkout.phone.placeholder": "+998 90 123 45 67",
+    "checkout.notes": "Примечания к заказу",
+    "checkout.notes.placeholder": "Дополнительная информация...",
+    "checkout.place.order": "Оформить заказ",
+    "checkout.processing": "Обработка...",
+    "checkout.quantity": "Количество",
+    "checkout.pcs": "шт",
+    "checkout.total": "Итого",
 
     // Product Page
     "products.title": "Все продукты",
@@ -200,6 +240,17 @@ const translations: Record<Language, Record<string, string>> = {
     "products.showing": "Показано",
     "products.of": "из",
     "products.results": "результатов",
+    
+    // Product Detail Page
+    "product.quantity": "Количество",
+    "product.add.to.cart": "Добавить в корзину",
+    "product.not.found": "Товар не найден",
+    "product.back.to.categories": "Вернуться к категориям",
+    "product.description": "Описание",
+    "product.specifications": "Характеристики",
+    "product.home": "Главная",
+    "product.categories": "Категории",
+    "product.related": "Похожие товары",
 
     // Mega Dropdown
     "ranges": "Диапазоны",
@@ -265,6 +316,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Products Page
     "all.products": "Все товары",
+    "all.categories": "Все категории",
     "load.more": "Загрузить еще",
 
     // For Partners Page
@@ -380,7 +432,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     "contactPage.multipleWays.email.title": "Поддержка по email",
     "contactPage.multipleWays.email.description": "Отправьте нам подробный запрос",
-    "contactPage.multipleWays.email.address": "info@safihotel.uz",
+    "contactPage.multipleWays.email.address": "safihotelcollection@gmail.com",
     "contactPage.multipleWays.email.response": "Ответ в течение 2 часов",
 
     "contactPage.multipleWays.chat.title": "Онлайн чат",
@@ -412,13 +464,13 @@ const translations: Record<Language, Record<string, string>> = {
     "contactPage.locations.samarkand.city": "Самарканд",
     "contactPage.locations.samarkand.badge": "Главный офис",
     "contactPage.locations.samarkand.address": "ул. Регистан, 15, Самарканд, Узбекистан 140100",
-    "contactPage.locations.samarkand.email": "samarkand@safihotel.uz",
+    "contactPage.locations.samarkand.email": "safihotelcollection@gmail.com",
     "contactPage.locations.samarkand.timezone": "UTC+5 (Ташкентское время)",
 
     "contactPage.locations.tashkent.city": "Ташкент",
     "contactPage.locations.tashkent.badge": "Филиал",
     "contactPage.locations.tashkent.address": "ул. Амира Темура, 108, Ташкент, Узбекистан 100000",
-    "contactPage.locations.tashkent.email": "tashkent@safihotel.uz",
+    "contactPage.locations.tashkent.email": "safihotelcollection@gmail.com",
     "contactPage.locations.tashkent.timezone": "UTC+5 (Ташкентское время)",
 
     // What We Offer
@@ -448,6 +500,30 @@ const translations: Record<Language, Record<string, string>> = {
     "modal.new.submit": "Посмотреть новинки",
     "modal.new.submitting": "Загрузка...",
     "modal.new.note": "Мы используем эту информацию для персонализации вашего опыта",
+    "modal.new.fill.all": "Заполните все поля",
+    "modal.new.success": "Запрос успешно отправлен!",
+    "modal.new.error": "Ошибка при отправке запроса",
+
+    // Search Page
+    "search.results": "Результаты поиска",
+    "search.query": "Поиск по запросу",
+    "search.found": "Найдено",
+    "search.products": "товаров",
+    "search.no.results": "Ничего не найдено",
+    "search.try.different": "Попробуйте изменить поисковый запрос",
+
+    // Categories Page
+    "categories.all": "Все категории",
+    "categories.subtitle": "Все необходимые категории товаров для вашего отеля",
+    "categories.not.found": "Категории не найдены",
+    "categories.not.found.desc": "Пока категории не добавлены",
+    "categories.view.products": "Посмотреть товары",
+    "categories.subcategories": "Подкатегории",
+    "categories.other": "Другие категории",
+    "categories.no.products": "Товары не найдены",
+    "categories.no.products.desc": "В этой категории пока нет товаров",
+    "categories.view": "Посмотреть",
+    "categories.view.all.products": "Посмотреть все товары этой категории",
 
     // About Page
     "about.hero.title": "О нас",
@@ -522,6 +598,10 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.guest.zone": "Mehmon zonasi",
     "nav.hotel.components": "Mehmonxona komponentlari",
     "nav.cleaning.equipment": "Professional tozalash uskunalari",
+    "virtual.tour.subtitle": "Mehmonxonani virtual ko'ring",
+    "eco.concept": "EKO-kontseptsiya",
+    "view.products": "Ko'rish",
+    "open.tour": "Turni ochish",
 
     // Old navigation (keeping for compatibility)
     bathroom: "Hammom",
@@ -630,6 +710,42 @@ const translations: Record<Language, Record<string, string>> = {
     "sustainable.dispensing": "Barqaror dozator yechimlari",
     "add.to.basket": "Savatga qo'shish",
     "add.to.compare": "Solishtirishga qo'shish",
+    
+    // Cart Page
+    "cart.empty": "Savat bo'sh",
+    "cart.empty.desc": "Hozircha savatingizda mahsulot yo'q",
+    "cart.start.shopping": "Xarid qilishni boshlash",
+    "cart.title": "Savat",
+    "cart.products": "ta mahsulot",
+    "cart.order.info": "Buyurtma ma'lumotlari",
+    "cart.total.products": "Jami mahsulotlar:",
+    "cart.place.order": "Buyurtma berish",
+    "cart.continue.shopping": "Xaridni davom ettirish",
+    
+    // Toast Messages
+    "toast.added.to.cart": "savatga qo'shildi!",
+    "toast.products.added": "ta mahsulot savatga qo'shildi!",
+    "toast.enter.phone": "Telefon raqamni kiriting!",
+    "toast.no.orders": "Buyurtmalar topilmadi",
+    "toast.error.loading": "Buyurtmalarni yuklashda xatolik",
+    "toast.cart.empty": "Savat bo'sh!",
+    "toast.order.success": "Buyurtma muvaffaqiyatli yuborildi!",
+    "toast.order.error": "Buyurtma yuborishda xatolik yuz berdi",
+    
+    // Checkout Page
+    "checkout.title": "Buyurtma berish",
+    "checkout.your.order": "Sizning buyurtmangiz",
+    "checkout.products": "ta mahsulot",
+    "checkout.contact.info": "Aloqa ma'lumotlari",
+    "checkout.phone": "Telefon raqam",
+    "checkout.phone.placeholder": "+998 90 123 45 67",
+    "checkout.notes": "Buyurtma haqida izoh",
+    "checkout.notes.placeholder": "Qo'shimcha ma'lumot...",
+    "checkout.place.order": "Buyurtma berish",
+    "checkout.processing": "Yuborilmoqda...",
+    "checkout.quantity": "Miqdor",
+    "checkout.pcs": "ta",
+    "checkout.total": "Jami",
 
     // Product Page
     "products.title": "Barcha mahsulotlar",
@@ -646,6 +762,17 @@ const translations: Record<Language, Record<string, string>> = {
     "products.showing": "Ko'rsatilmoqda",
     "products.of": "dan",
     "products.results": "natija",
+    
+    // Product Detail Page
+    "product.quantity": "Miqdor",
+    "product.add.to.cart": "Savatga qo'shish",
+    "product.not.found": "Mahsulot topilmadi",
+    "product.back.to.categories": "Kategoriyalarga qaytish",
+    "product.description": "Tavsif",
+    "product.specifications": "Xususiyatlar",
+    "product.home": "Bosh sahifa",
+    "product.categories": "Kategoriyalar",
+    "product.related": "O'xshash mahsulotlar",
 
     // Mega Dropdown
     "ranges": "Diapazonlar",
@@ -711,6 +838,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Products Page
     "all.products": "Barcha mahsulotlar",
+    "all.categories": "Barcha kategoriyalar",
     "load.more": "Ko'proq yuklash",
 
     // For Partners Page
@@ -826,7 +954,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     "contactPage.multipleWays.email.title": "Email qo'llab-quvvatlash",
     "contactPage.multipleWays.email.description": "Bizga batafsil so'rov yuboring",
-    "contactPage.multipleWays.email.address": "info@safihotel.uz",
+    "contactPage.multipleWays.email.address": "safihotelcollection@gmail.com",
     "contactPage.multipleWays.email.response": "2 soat ichida javob",
 
     "contactPage.multipleWays.chat.title": "Onlayn chat",
@@ -858,13 +986,13 @@ const translations: Record<Language, Record<string, string>> = {
     "contactPage.locations.samarkand.city": "Samarqand",
     "contactPage.locations.samarkand.badge": "Bosh ofis",
     "contactPage.locations.samarkand.address": "Registon ko'chasi, 15, Samarqand, O'zbekiston 140100",
-    "contactPage.locations.samarkand.email": "samarkand@safihotel.uz",
+    "contactPage.locations.samarkand.email": "safihotelcollection@gmail.com",
     "contactPage.locations.samarkand.timezone": "UTC+5 (Toshkent vaqti)",
 
     "contactPage.locations.tashkent.city": "Toshkent",
     "contactPage.locations.tashkent.badge": "Filial",
     "contactPage.locations.tashkent.address": "Amir Temur ko'chasi, 108, Toshkent, O'zbekiston 100000",
-    "contactPage.locations.tashkent.email": "tashkent@safihotel.uz",
+    "contactPage.locations.tashkent.email": "safihotelcollection@gmail.com",
     "contactPage.locations.tashkent.timezone": "UTC+5 (Toshkent vaqti)",
 
     // What We Offer
@@ -894,6 +1022,30 @@ const translations: Record<Language, Record<string, string>> = {
     "modal.new.submit": "Yangiliklar ko'rish",
     "modal.new.submitting": "Yuklanmoqda...",
     "modal.new.note": "Biz bu ma'lumotni sizning tajribangizni shaxsiylashtirish uchun ishlatamiz",
+    "modal.new.fill.all": "Barcha maydonlarni to'ldiring",
+    "modal.new.success": "So'rov muvaffaqiyatli yuborildi!",
+    "modal.new.error": "So'rov yuborishda xatolik",
+
+    // Search Page
+    "search.results": "Qidiruv natijalari",
+    "search.query": "Qidiruv so'rovi",
+    "search.found": "Topildi",
+    "search.products": "ta mahsulot",
+    "search.no.results": "Hech narsa topilmadi",
+    "search.try.different": "Boshqa qidiruv so'rovini sinab ko'ring",
+
+    // Categories Page
+    "categories.all": "Barcha kategoriyalar",
+    "categories.subtitle": "Mehmonxonangiz uchun kerakli barcha mahsulot kategoriyalari",
+    "categories.not.found": "Kategoriyalar topilmadi",
+    "categories.not.found.desc": "Hozircha kategoriyalar qo'shilmagan",
+    "categories.view.products": "Mahsulotlarni ko'rish",
+    "categories.subcategories": "Sub kategoriyalar",
+    "categories.other": "Boshqa kategoriyalar",
+    "categories.no.products": "Mahsulotlar topilmadi",
+    "categories.no.products.desc": "Bu kategoriyada hozircha mahsulotlar yo'q",
+    "categories.view": "Ko'rish",
+    "categories.view.all.products": "Bu kategoriyaning barcha mahsulotlarini ko'rish",
 
     // About Page
     "about.hero.title": "Biz haqimizda",
@@ -968,6 +1120,10 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.guest.zone": "Guest Zone",
     "nav.hotel.components": "Hotel Components",
     "nav.cleaning.equipment": "Professional Cleaning Equipment",
+    "virtual.tour.subtitle": "Virtual Hotel Tour",
+    "eco.concept": "ECO-concept",
+    "view.products": "View Products",
+    "open.tour": "Open Tour",
 
     // Old navigation (keeping for compatibility)
     bathroom: "Bathroom",
@@ -1076,6 +1232,42 @@ const translations: Record<Language, Record<string, string>> = {
     "sustainable.dispensing": "Sustainable dispensing solutions",
     "add.to.basket": "Add to Basket",
     "add.to.compare": "Add to compare",
+    
+    // Cart Page
+    "cart.empty": "Cart is empty",
+    "cart.empty.desc": "You don't have any products in your cart yet",
+    "cart.start.shopping": "Start Shopping",
+    "cart.title": "Shopping Cart",
+    "cart.products": "products",
+    "cart.order.info": "Order Summary",
+    "cart.total.products": "Total products:",
+    "cart.place.order": "Place Order",
+    "cart.continue.shopping": "Continue Shopping",
+    
+    // Toast Messages
+    "toast.added.to.cart": "added to cart!",
+    "toast.products.added": "products added to cart!",
+    "toast.enter.phone": "Please enter phone number!",
+    "toast.no.orders": "No orders found",
+    "toast.error.loading": "Error loading orders",
+    "toast.cart.empty": "Cart is empty!",
+    "toast.order.success": "Order placed successfully!",
+    "toast.order.error": "Error placing order",
+    
+    // Checkout Page
+    "checkout.title": "Checkout",
+    "checkout.your.order": "Your Order",
+    "checkout.products": "products",
+    "checkout.contact.info": "Contact Information",
+    "checkout.phone": "Phone Number",
+    "checkout.phone.placeholder": "+998 90 123 45 67",
+    "checkout.notes": "Order Notes",
+    "checkout.notes.placeholder": "Additional information...",
+    "checkout.place.order": "Place Order",
+    "checkout.processing": "Processing...",
+    "checkout.quantity": "Quantity",
+    "checkout.pcs": "pcs",
+    "checkout.total": "Total",
 
     // Product Page
     "products.title": "All Products",
@@ -1092,6 +1284,17 @@ const translations: Record<Language, Record<string, string>> = {
     "products.showing": "Showing",
     "products.of": "of",
     "products.results": "results",
+    
+    // Product Detail Page
+    "product.quantity": "Quantity",
+    "product.add.to.cart": "Add to Cart",
+    "product.not.found": "Product not found",
+    "product.back.to.categories": "Back to Categories",
+    "product.description": "Description",
+    "product.specifications": "Specifications",
+    "product.home": "Home",
+    "product.categories": "Categories",
+    "product.related": "Related Products",
 
     // Mega Dropdown
     "ranges": "Ranges",
@@ -1157,6 +1360,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Products Page
     "all.products": "All Products",
+    "all.categories": "All Categories",
     "load.more": "Load More",
 
     // For Partners Page
@@ -1272,7 +1476,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     "contactPage.multipleWays.email.title": "Email Support",
     "contactPage.multipleWays.email.description": "Send us a detailed inquiry",
-    "contactPage.multipleWays.email.address": "info@safihotel.uz",
+    "contactPage.multipleWays.email.address": "safihotelcollection@gmail.com",
     "contactPage.multipleWays.email.response": "Response within 2 hours",
 
     "contactPage.multipleWays.chat.title": "Live Chat",
@@ -1304,13 +1508,13 @@ const translations: Record<Language, Record<string, string>> = {
     "contactPage.locations.samarkand.city": "Samarkand",
     "contactPage.locations.samarkand.badge": "Head Office",
     "contactPage.locations.samarkand.address": "15 Registan Street, Samarkand, Uzbekistan 140100",
-    "contactPage.locations.samarkand.email": "samarkand@safihotel.uz",
+    "contactPage.locations.samarkand.email": "safihotelcollection@gmail.com",
     "contactPage.locations.samarkand.timezone": "UTC+5 (Tashkent Time)",
 
     "contactPage.locations.tashkent.city": "Tashkent",
     "contactPage.locations.tashkent.badge": "Branch Office",
     "contactPage.locations.tashkent.address": "108 Amir Temur Street, Tashkent, Uzbekistan 100000",
-    "contactPage.locations.tashkent.email": "tashkent@safihotel.uz",
+    "contactPage.locations.tashkent.email": "safihotelcollection@gmail.com",
     "contactPage.locations.tashkent.timezone": "UTC+5 (Tashkent Time)",
 
     // What We Offer
@@ -1340,6 +1544,30 @@ const translations: Record<Language, Record<string, string>> = {
     "modal.new.submit": "View New Products",
     "modal.new.submitting": "Loading...",
     "modal.new.note": "We use this information to personalize your experience",
+    "modal.new.fill.all": "Please fill all fields",
+    "modal.new.success": "Request submitted successfully!",
+    "modal.new.error": "Error submitting request",
+
+    // Search Page
+    "search.results": "Search Results",
+    "search.query": "Search query",
+    "search.found": "Found",
+    "search.products": "products",
+    "search.no.results": "No results found",
+    "search.try.different": "Try a different search query",
+
+    // Categories Page
+    "categories.all": "All Categories",
+    "categories.subtitle": "All necessary product categories for your hotel",
+    "categories.not.found": "Categories not found",
+    "categories.not.found.desc": "No categories added yet",
+    "categories.view.products": "View Products",
+    "categories.subcategories": "Subcategories",
+    "categories.other": "Other Categories",
+    "categories.no.products": "No products found",
+    "categories.no.products.desc": "No products in this category yet",
+    "categories.view": "View",
+    "categories.view.all.products": "View all products in this category",
 
     // About Page
     "about.hero.title": "About Us",

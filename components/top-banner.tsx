@@ -18,7 +18,7 @@ export function TopBanner() {
           <div className="flex items-center gap-3 md:gap-6 order-1 sm:order-2">
             {/* <LanguageSwitcher /> */}
             <a href="tel:+998918888080"><span className="hidden sm:inline">+998 918888080</span></a>
-            <span className="hidden lg:inline">info@safihotelcollection.uz</span>
+            <span className="hidden lg:inline">safihotelcollection@gmail.com</span>
           </div>
         </div>
       </div>

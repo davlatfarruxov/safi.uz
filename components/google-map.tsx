@@ -53,10 +53,10 @@ export function GoogleMap() {
             <div className="flex items-center gap-3">
               <span className="text-[#084b25] font-medium">✉️</span>
               <a 
-                href="mailto:samarkand@safihotelcollection.com" 
+                href="mailto:safihotelcollection@gmail.com" 
                 className="text-gray-900 hover:text-[#084b25] font-medium transition-colors break-all"
               >
-                samarkand@safihotelcollection.com
+                safihotelcollection@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-3">
@@ -93,10 +93,10 @@ export function GoogleMap() {
             <div className="flex items-center gap-3">
               <span className="text-[#084b25] font-medium">✉️</span>
               <a
-                href="mailto:tashkent@safihotelcollection.com"
+                href="mailto:safihotelcollection@gmail.com"
                 className="text-gray-900 hover:text-[#084b25] font-medium transition-colors break-all"
               >
-                tashkent@safihotelcollection.com
+                safihotelcollection@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-3">

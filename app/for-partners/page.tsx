@@ -31,11 +31,46 @@ export default function ForPartnersPage() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Partner form submitted:", formData)
-    alert("Anketa muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.")
+    setIsSubmitting(true)
+    
+    try {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
+      const response = await fetch(`${API_URL}/partners`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        alert("Anketa muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.")
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          phone: "",
+          address: "",
+          companyName: "",
+          hotelType: "",
+          roomCount: "",
+          message: ""
+        })
+      } else {
+        alert("Xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring.")
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      alert("Xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -204,9 +239,10 @@ export default function ForPartnersPage() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-[#084b25] hover:bg-[#06391d] text-white py-3 text-lg"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#084b25] hover:bg-[#06391d] text-white py-3 text-lg disabled:opacity-50"
                   >
-                    {t("partners.form.submit")}
+                    {isSubmitting ? t("partners.form.submitting") || "Yuborilmoqda..." : t("partners.form.submit")}
                   </Button>
                 </form>
               </CardContent>
@@ -271,7 +307,7 @@ export default function ForPartnersPage() {
                   <Mail className="h-5 w-5 text-[#084b25]" />
                   <div>
                     <p className="font-bold text-gray-900">{t("partners.contact.email")}</p>
-                    <p className="text-gray-700 text-base">partners@safihotelcollection.com</p>
+                    <p className="text-gray-700 text-base">safihotelcollection@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">

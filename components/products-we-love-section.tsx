@@ -3,37 +3,27 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useLanguage } from "@/lib/language-context"
+import { useCart } from "@/lib/cart-context"
+import { useFeaturedProducts } from "@/hooks/useProducts"
 import Image from "next/image"
+import Link from "next/link"
+import toast from "react-hot-toast"
 
 export function ProductsWeLoveSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const { addToCart } = useCart()
+  const { products, loading } = useFeaturedProducts(3)
 
-  const products = [
-    {
-      id: "bentley-limea-cot",
-      name: "Bentley Limea Safe Foldable Wooden Baby Cot, Natural",
-      price: 343.40,
-      originalPrice: 412.08,
-      image: "/wooden-baby-cot-hotel.jpg",
-      badge: null,
-    },
-    {
-      id: "corby-hairdryer",
-      name: "Corby Milton 2000W Hairdryerr, Black",
-      price: 24.50,
-      originalPrice: 29.40,
-      image: "/corby-hairdryer-black.jpg",
-      badge: "New",
-    },
-    {
-      id: "bentley-coffee-tray",
-      name: "Bentley Xanthic Coffee & Tea Wooden Welcome Tray, Matt Black",
-      price: 69.35,
-      originalPrice: 83.22,
-      image: "/bentley-coffee-tea-tray.jpg",
-      badge: null,
-    },
-  ]
+  // Rasm URL ni to'g'rilash
+  const getImageUrl = (url?: string) => {
+    if (!url) return "/placeholder-product.jpg"
+    if (url.startsWith('http')) return url
+    if (url.startsWith('/uploads')) {
+      const API_BASE = process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://localhost:5000'
+      return `${API_BASE}${url}`
+    }
+    return url
+  }
 
   return (
     <section className="py-12 md:py-16 bg-gray-50">
@@ -52,47 +42,70 @@ export function ProductsWeLoveSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {/* Left side - Product cards */}
           <div className="space-y-4 md:space-y-6">
-            {products.map((product) => (
-              <div key={product.id} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                <div className="flex gap-4">
-                  <div className="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 bg-gray-100 rounded-lg overflow-hidden relative">
-                    {product.badge && (
-                      <Badge className="absolute top-1 left-1 z-10 text-xs bg-[#7B6B8F] text-white">
-                        {product.badge}
-                      </Badge>
-                    )}
-                    <Image
-                      src={product.image || "/placeholder.svg"}
-                      alt={product.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 80px, 96px"
-                    />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-sm md:text-base font-medium text-gray-900 mb-2 line-clamp-2">
-                      {product.name}
-                    </h3>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-lg font-bold text-gray-900">
-                        £{product.price.toFixed(2)}
-                      </span>
-                      <span className="text-sm text-gray-500 line-through">
-                        £{product.originalPrice.toFixed(2)} Inc. VAT
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Button size="sm" className="bg-[#7B6B8F] hover:bg-[#6A5A7E] text-white text-xs">
-                        {t("add.to.basket")}
-                      </Button>
-                      <Button variant="ghost" size="sm" className="text-xs text-gray-600">
-                        {t("add.to.compare")}
-                      </Button>
+            {loading ? (
+              [...Array(3)].map((_, i) => (
+                <div key={i} className="bg-white border border-gray-200 rounded-lg p-4 animate-pulse">
+                  <div className="flex gap-4">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gray-200 rounded-lg"></div>
+                    <div className="flex-1 space-y-2">
+                      <div className="bg-gray-200 h-4 rounded w-3/4"></div>
+                      <div className="bg-gray-200 h-4 rounded w-1/2"></div>
+                      <div className="bg-gray-200 h-8 rounded w-1/3"></div>
                     </div>
                   </div>
                 </div>
+              ))
+            ) : products.length === 0 ? (
+              <div className="text-center py-8 text-gray-500">
+                Mahsulotlar topilmadi
               </div>
-            ))}
+            ) : (
+              products.map((product) => {
+                const productName = product.name[language as keyof typeof product.name] || product.name.uz
+                const imageUrl = getImageUrl(product.images?.[0]?.url)
+
+                return (
+                  <Link 
+                    key={product._id} 
+                    href={`/product/${product.slug}`}
+                    className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow block"
+                  >
+                    <div className="flex gap-4">
+                      <div className="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 bg-gray-100 rounded-lg overflow-hidden relative">
+                        {product.isNewProduct && (
+                          <Badge className="absolute top-1 left-1 z-10 text-xs bg-red-500 text-white">
+                            NEW
+                          </Badge>
+                        )}
+                        <img
+                          src={imageUrl}
+                          alt={productName}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-sm md:text-base font-medium text-gray-900 mb-3 line-clamp-2">
+                          {productName}
+                        </h3>
+                        <div className="flex items-center gap-2">
+                          <Button 
+                            size="sm" 
+                            onClick={(e) => {
+                              e.preventDefault()
+                              addToCart(product, 1)
+                              toast.success(`${productName} ${t("toast.added.to.cart")}`)
+                            }}
+                            className="bg-[#084b25] hover:bg-[#06391d] text-white text-xs"
+                          >
+                            {t("add.to.basket")}
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                )
+              })
+            )}
             
             {/* View all button for mobile */}
             <div className="flex justify-center md:hidden mt-6">

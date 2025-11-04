@@ -54,12 +54,17 @@ export function CategoryGrid() {
       <div className="with-full mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {categories.map((category, index) => (
-            <Link key={category.title} href={category.href} className="group relative overflow-hidden rounded-lg aspect-square bg-white shadow-sm hover:shadow-md transition-all duration-300">
+            <Link 
+              key={category.title} 
+              href={category.href}
+              className="group relative overflow-hidden rounded-lg aspect-square bg-white shadow-sm hover:shadow-md transition-all duration-300"
+            >
               <img
                 src={category.image || "/placeholder.svg"}
                 alt={category.title}
-                className={`w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-105 ${isVisible ? 'scale-100' : 'scale-110'
-                  }`}
+                className={`w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-105 ${
+                  isVisible ? 'scale-100' : 'scale-110'
+                }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />

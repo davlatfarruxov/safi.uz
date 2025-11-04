@@ -1,6 +1,7 @@
 "use client"
 
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
+import type { Product as ApiProduct } from "./api"
 
 interface Product {
   id: string
@@ -9,6 +10,7 @@ interface Product {
   originalPrice?: number
   image: string
   badge?: string
+  fullProduct?: ApiProduct // To'liq product ma'lumotlari
 }
 
 interface WishlistContextType {

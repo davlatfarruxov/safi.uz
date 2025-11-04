@@ -24,22 +24,47 @@ export function ContactSection() {
     consent: false,
   })
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        hotelCompany: "",
-        phone: "",
-        message: "",
-        consent: false,
+    setIsSubmitting(true)
+    
+    try {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
+      const response = await fetch(`${API_URL}/contacts`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
-    }, 3000)
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitted(true)
+        setTimeout(() => {
+          setSubmitted(false)
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            hotelCompany: "",
+            phone: "",
+            message: "",
+            consent: false,
+          })
+        }, 3000)
+      } else {
+        alert("Xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring.")
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      alert("Xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -113,10 +138,10 @@ export function ContactSection() {
                 {t("contactPage.multipleWays.email.description")}
               </p>
               <a
-                href="mailto:info@safihotelcollection.com"
+                href="mailto:safihotelcollection@gmail.com"
                 className="mb-2 block font-semibold text-[#084b25] hover:underline"
               >
-                info@safihotelcollection.com
+                safihotelcollection@gmail.com
               </a>
               <p className="text-xs text-gray-500">Response within 2 hours</p>
             </Card>
@@ -224,8 +249,13 @@ export function ContactSection() {
                     </Label>
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full bg-[#084b25] text-white hover:bg-[#084b25]/90">
-                    {t("contactPage.form.submit")}
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    disabled={isSubmitting}
+                    className="w-full bg-[#084b25] text-white hover:bg-[#084b25]/90 disabled:opacity-50"
+                  >
+                    {isSubmitting ? "Yuborilmoqda..." : t("contactPage.form.submit")}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </form>
