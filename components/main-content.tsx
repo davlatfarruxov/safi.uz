@@ -14,7 +14,7 @@ export function MainContent() {
   const [currentEcoImage, setCurrentEcoImage] = useState(0)
   const sectionRef = useRef<HTMLElement>(null)
   
-  const ecoImages = ['/eko1.jpg', '/eko2.jpg', '/eko3.jpg']
+  const ecoImages = ['/eko1.JPG', '/eko2.JPG', '/eko3.JPG']
 
   useEffect(() => {
     const observer = new IntersectionObserver(

@@ -22,7 +22,6 @@ export default function ProductForm() {
     category: '',
     sku: '',
     isActive: true,
-    isFeatured: false,
     isNewProduct: false,
   });
 
@@ -46,7 +45,6 @@ export default function ProductForm() {
         category: currentProduct.category?._id || '',
         sku: currentProduct.sku || '',
         isActive: currentProduct.isActive,
-        isFeatured: currentProduct.isFeatured,
         isNewProduct: currentProduct.isNewProduct,
       });
       setImages(currentProduct.images || []);
@@ -302,15 +300,6 @@ export default function ProductForm() {
                 onChange={handleChange}
               />
               <span>Faol</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                name="isFeatured"
-                checked={formData.isFeatured}
-                onChange={handleChange}
-              />
-              <span>Tanlangan</span>
             </label>
             <label className="flex items-center gap-2">
               <input
