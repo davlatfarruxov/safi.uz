@@ -1,0 +1,271 @@
+{
+  "info": {
+    "name": "Safi Hotel Collection API",
+    "description": "API endpoints for Safi Hotel Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.environment.set(\"token\", jsonData.token);",
+                  "    console.log(\"Token saved:\", jsonData.token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@safihotel.uz\",\n  \"password\": \"admin123456\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Get Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/auth/profile",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "profile"]
+            }
+          }
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"newadmin\",\n  \"email\": \"newadmin@safihotel.uz\",\n  \"password\": \"password123\",\n  \"role\": \"admin\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "register"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/products?page=1&limit=10",
+              "host": ["{{base_url}}"],
+              "path": ["products"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Single Product",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/products/:id",
+              "host": ["{{base_url}}"],
+              "path": ["products", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "product_id_here"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": {\n    \"uz\": \"Yangi Mahsulot\",\n    \"ru\": \"Новый Продукт\",\n    \"en\": \"New Product\"\n  },\n  \"description\": {\n    \"uz\": \"Mahsulot tavsifi\",\n    \"ru\": \"Описание продукта\",\n    \"en\": \"Product description\"\n  },\n  \"category\": \"category_id_here\",\n  \"price\": 0,\n  \"stock\": 100,\n  \"isActive\": true,\n  \"isFeatured\": false,\n  \"isNewProduct\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/products",
+              "host": ["{{base_url}}"],
+              "path": ["products"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Get All Categories",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/categories",
+              "host": ["{{base_url}}"],
+              "path": ["categories"]
+            }
+          }
+        },
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": {\n    \"uz\": \"Yangi Kategoriya\",\n    \"ru\": \"Новая Категория\",\n    \"en\": \"New Category\"\n  },\n  \"slug\": \"new-category\",\n  \"isActive\": true,\n  \"order\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/categories",
+              "host": ["{{base_url}}"],
+              "path": ["categories"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/orders",
+              "host": ["{{base_url}}"],
+              "path": ["orders"]
+            }
+          }
+        },
+        {
+          "name": "Create Order (Public)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer\": {\n    \"name\": \"Test Customer\",\n    \"email\": \"customer@example.com\",\n    \"phone\": \"+998901234567\"\n  },\n  \"items\": [\n    {\n      \"product\": \"product_id\",\n      \"name\": \"Product Name\",\n      \"quantity\": 1,\n      \"price\": 0,\n      \"total\": 0\n    }\n  ],\n  \"shippingAddress\": {\n    \"address\": \"Test Address\",\n    \"city\": \"Tashkent\",\n    \"region\": \"Tashkent\",\n    \"postalCode\": \"100000\",\n    \"country\": \"Uzbekistan\"\n  },\n  \"paymentMethod\": \"cash\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/orders/public",
+              "host": ["{{base_url}}"],
+              "path": ["orders", "public"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Upload",
+      "item": [
+        {
+          "name": "Upload Single File",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/upload/single",
+              "host": ["{{base_url}}"],
+              "path": ["upload", "single"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
