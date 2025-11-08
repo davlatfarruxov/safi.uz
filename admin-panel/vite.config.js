@@ -7,13 +7,18 @@ export default defineConfig({
     port: 3001,
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'http://localhost:5100',
         changeOrigin: true
       },
       '/uploads': {
-        target: 'http://localhost:5000',
+        target: 'http://localhost:5100',
         changeOrigin: true
       }
     }
+  },
+	 preview: {
+    host: true,
+    port: 4174,
+    allowedHosts: ['admin.safi-h.uz', 'www.admin.safi-h.uz'],
   }
 })
