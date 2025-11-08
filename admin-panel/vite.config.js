@@ -16,15 +16,10 @@ export default defineConfig({
       }
     }
   },
-
 	 preview: {
     host: true,
     port: 4174,
     allowedHosts: ['admin.safi-h.uz', 'www.admin.safi-h.uz'],
-
-  preview: {
-    port: 3001,
-    host: true
 
   }
 })
