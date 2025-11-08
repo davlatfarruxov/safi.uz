@@ -63,7 +63,7 @@ export function PremiumAmenitiesSection() {
                 {t("view.all")}
               </Button>
             </div>
-            
+
             {/* 3 Products Side by Side */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 flex-1">
               {premiumProducts.map((product, index) => (
@@ -84,15 +84,15 @@ export function PremiumAmenitiesSection() {
                         </span>
                       )}
                     </div>
-                    
+
                     {/* Product Name - Compact */}
                     <h3 className="text-xs font-medium text-gray-900 mb-1 leading-tight line-clamp-2 flex-1">
                       {product.name}
                     </h3>
-                    
+
                     {/* Rating */}
                     {/*  */}
-                    
+
                     {/* Price - Compact */}
                     {/* <div className="mb-2">
                       <div className="text-sm font-bold text-gray-900">

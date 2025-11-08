@@ -60,17 +60,17 @@ export function RealCategoryGrid() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#084b25] transition-colors">
                     {category.name[language]}
                   </h3>
-                  
+
                   {category.description && category.description[language] && (
                     <p className="text-gray-600 text-sm line-clamp-3">
                       {category.description[language]}
                     </p>
                   )}
                 </div>
-                
-                <ArrowRight 
-                  size={20} 
-                  className="text-gray-400 group-hover:text-[#084b25] group-hover:translate-x-1 transition-all flex-shrink-0 ml-4" 
+
+                <ArrowRight
+                  size={20}
+                  className="text-gray-400 group-hover:text-[#084b25] group-hover:translate-x-1 transition-all flex-shrink-0 ml-4"
                 />
               </div>
 
