@@ -96,7 +96,7 @@ export function MainContent() {
                 <h2 className="text-xl md:text-2xl font-bold text-white mb-3 text-center">
                   {t("nav.eco.concept")}
                 </h2>
-                <Link href="/eco-concept">
+                <Link href="/categories?category=eco">
                   <Button className="bg-[#084b25] hover:bg-[#06391d] text-white px-4 md:px-6 py-2 text-sm md:text-base font-medium">
                     {t("view.products") || "Посмотреть"}
                   </Button>
@@ -148,7 +148,7 @@ export function MainContent() {
                   <h2 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 text-center">
                     {t("nav.bedroom.zone")}
                   </h2>
-                  <Link href="/guest-zone">
+                  <Link href="/categories?category=bedroom">
                     <Button className="bg-[#084b25] hover:bg-[#06391d] text-white px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium">
                       {t("view")}
                     </Button>

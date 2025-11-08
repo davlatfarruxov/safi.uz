@@ -30,22 +30,22 @@ export function CategoryGrid() {
     {
       title: t("nav.bathroom.zone"),
       image: "/safi-banner1.JPG",
-      href: "/new",
+      href: "/categories?category=bathroom",
     },
     {
       title: t("nav.guest.zone"),
       image: "/safi-banner2.JPG",
-      href: "/eco-concept",
+      href: "/categories?category=guest",
     },
     {
       title: t("nav.hotel.components"),
       image: "/safi-banner3.JPG",
-      href: "/bathroom-zone",
+      href: "/categories?category=hotel-collection",
     },
     {
       title: t("nav.cleaning.equipment"),
       image: "/safi-banner1.JPG",
-      href: "/cleaning-equipment",
+      href: "/categories?category=proffessional",
     },
   ]
 
