@@ -99,8 +99,8 @@ export default function ProductForm() {
 
     const productData = {
       ...formData,
-      slug: formData.name.en.toLowerCase().replace(/\s+/g, '-'),
       images,
+      // Slug ni yubormaymiz - backend o'zi yaratadi
     };
 
     try {
@@ -114,6 +114,7 @@ export default function ProductForm() {
       navigate('/products');
     } catch (error) {
       toast.error('Xatolik yuz berdi');
+      console.error('Error:', error);
     }
   };
 
@@ -131,7 +132,7 @@ export default function ProductForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="card">
           <h3 className="text-lg font-semibold mb-4">Asosiy Ma'lumotlar</h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div>
               <label className="block text-sm font-medium mb-2">Nomi (O'zbek)</label>
@@ -222,14 +223,21 @@ export default function ProductForm() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">SKU</label>
+              <label className="block text-sm font-medium mb-2">
+                SKU (Mahsulot kodi)
+                <span className="text-gray-500 text-xs ml-1">(ixtiyoriy)</span>
+              </label>
               <input
                 type="text"
                 name="sku"
                 value={formData.sku}
                 onChange={handleChange}
                 className="input-field"
+                placeholder="Masalan: BATH-001"
               />
+              <p className="text-xs text-gray-500 mt-1">
+                Bo'sh qoldirilsa, avtomatik yaratiladi
+              </p>
             </div>
             <div>
               <label className="block text-sm font-medium mb-2">Kategoriya</label>

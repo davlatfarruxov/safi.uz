@@ -8,8 +8,9 @@ const productSchema = new mongoose.Schema({
   },
   slug: {
     type: String,
-    required: true,
-    unique: true
+    required: false, // Avtomatik generatsiya qilinadi
+    unique: true,
+    sparse: true // Null qiymatlar uchun unique constraint ishlamaydi
   },
   description: {
     uz: String,
@@ -157,9 +158,9 @@ function generateSlug(text) {
     .replace(/^-+|-+$/g, '');
 }
 
-// Pre-save hook to generate slug
+// Pre-save hook to generate slug and SKU
 productSchema.pre('save', async function(next) {
-  // Only generate slug if it's not provided or if name has changed
+  // Generate slug if not provided or if name has changed
   if (!this.slug || this.isModified('name')) {
     // Use English name first, fallback to Uzbek, then Russian
     const baseName = this.name.en || this.name.uz || this.name.ru;
@@ -188,6 +189,14 @@ productSchema.pre('save', async function(next) {
     }
     
     this.slug = slug;
+  }
+  
+  // Generate SKU if not provided
+  if (!this.sku && this.isNew) {
+    // Generate SKU: PROD-TIMESTAMP-RANDOM
+    const timestamp = Date.now().toString().slice(-6);
+    const random = Math.random().toString(36).substring(2, 5).toUpperCase();
+    this.sku = `PROD-${timestamp}-${random}`;
   }
   
   next();

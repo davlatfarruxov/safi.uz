@@ -55,6 +55,15 @@ export const createProduct = async (req, res) => {
     const createdProduct = await product.save();
     res.status(201).json(createdProduct);
   } catch (error) {
+    console.error('Create product error:', error);
+    
+    // Slug duplicate error
+    if (error.code === 11000 && error.keyPattern?.slug) {
+      return res.status(400).json({ 
+        message: 'Slug allaqachon mavjud. Mahsulot nomi o\'zgartirilsin yoki qayta urinib ko\'ring.' 
+      });
+    }
+    
     res.status(400).json({ message: error.message });
   }
 };
